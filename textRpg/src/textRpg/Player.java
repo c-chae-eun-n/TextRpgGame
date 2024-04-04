@@ -3,7 +3,7 @@ package textRpg;
 public class Player extends Unit {
 	
 	public static int money;
-	public static Guild guild = new Guild();
+	public static Guild guild = Guild.getInstance();
 	public static Inventory inven = new Inventory();
 	
 	public Player() {}
