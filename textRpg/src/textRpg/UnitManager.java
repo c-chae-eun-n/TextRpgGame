@@ -27,4 +27,22 @@ public class UnitManager {
 	public void init() {
 		player.init();
 	}
+	
+	public void monsterRandomSet(int size) {
+		for(int i=0; i<size; i++) {
+			int rIdx = random.nextInt(monsters.length);
+			try {
+				Class<?> clazz = Class.forName(path + monsters[rIdx]);
+				Object obj = clazz.getDeclaredConstructor().newInstance();
+				Monster monster = (Monster) obj;
+				
+				int hp = random.nextInt(100) + 100;
+				int power = random.nextInt(10) + 10;
+				monster.init(hp, power);
+				monsterList.add(monster);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
