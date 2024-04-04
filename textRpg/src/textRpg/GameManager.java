@@ -11,6 +11,16 @@ public class GameManager {
 	
 	Map<String, Stage> stageList = new HashMap<String, Stage>();
 	
+	private GameManager() {
+		
+	}
+	
+	private static GameManager instance = new GameManager();
+	
+	public GameManager getInstance() {
+		return instance;
+	}
+	
 	private void init() {
 		stageList.put("TITLE", new StageTitle());
 		stageList.put("BATTLE", new StageBattle());
