@@ -20,9 +20,118 @@ public class Unit {
 		this.def = def;
 		this.exp = exp;
 		this.potion = 0;
-		this.party = false;
-		this.weapon = null;
-		this.armor = null;
-		this.ring = null;
+		this.setParty(false);
+		this.setWeapon(null);
+		this.setArmor(null);
+		this.setRing(null);
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public int getHp() {
+		return hp;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+
+	public int getMaxHp() {
+		return maxHp;
+	}
+
+	public int getPower() {
+		return power;
+	}
+
+	public void setPower(int power) {
+		this.power = power;
+	}
+
+	public int getDef() {
+		return def;
+	}
+
+	public void setDef(int def) {
+		this.def = def;
+	}
+
+	public int getExp() {
+		return exp;
+	}
+
+	public void setExp(int exp) {
+		this.exp = exp;
+	}
+
+	public int getPotion() {
+		return potion;
+	}
+
+	public void setPotion(int potion) {
+		this.potion = potion;
+	}
+
+	public boolean isStun() {
+		return isStun;
+	}
+
+	public void setStun(boolean isStun) {
+		this.isStun = isStun;
+	}
+
+	public boolean isShield() {
+		return isShield;
+	}
+
+	public void setShield(boolean isShield) {
+		this.isShield = isShield;
+	}
+
+	public boolean isParty() {
+		return party;
+	}
+
+	public void setParty(boolean party) {
+		this.party = party;
+	}
+
+	public Item getWeapon() {
+		return weapon;
+	}
+
+	public void setWeapon(Item weapon) {
+		this.weapon = weapon;
+	}
+
+	public Item getArmor() {
+		return armor;
+	}
+
+	public void setArmor(Item armor) {
+		this.armor = armor;
+	}
+
+	public Item getRing() {
+		return ring;
+	}
+
+	public void setRing(Item ring) {
+		this.ring = ring;
+	}
+	
 }
