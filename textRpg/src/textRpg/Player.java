@@ -1,5 +1,10 @@
 package textRpg;
 
-public class Player {
+public class Player extends Unit {
+	
+	public static int money;
 
+	public void init() {
+		
+	}
 }
