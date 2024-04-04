@@ -5,5 +5,8 @@ public class MonsterGhost extends Monster {
 		setName("유령👻");
 	}
 	
-	
+	@Override
+	public void skill() {
+		
+	}
 }
