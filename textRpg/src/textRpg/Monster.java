@@ -15,6 +15,34 @@ public class Monster {
 		this.power = power;
 	}
 	
+	public int getHp() {
+		return this.hp;
+	}
+	
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+	
+	public int getMaxHp() {
+		return this.maxHp;
+	}
+	
+	public int getPower() {
+		return this.power;
+	}
+	
+	public void setPower(int power) {
+		this.power = power;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	public void init(int maxHp, int power) {
 		this.hp = maxHp;
 		this.maxHp = maxHp;
