@@ -1,6 +1,6 @@
 package textRpg;
 
-public class Monster {
+public abstract class Monster {
 	private int hp, maxHp, power;
 	private String name;
 	
