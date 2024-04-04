@@ -43,5 +43,15 @@ public class GameManager {
 		else 
 			return true;
 	}
+	
+	public void run() {
+		boolean run = true;
+		while(true) {
+			run = changeStage();
+			if(run == false)
+				break;
+		}
+		System.out.println("게임 종료-");
+	}
 
 }
