@@ -2,7 +2,7 @@ package textRpg;
 
 public class Unit {
 	private String name;
-	private int level, hp, maxHp, power, def, exp, potion;
+	private int level, hp, maxHp, power, def, maxExp, exp, potion;
 	private boolean isStun, isShield;
 	private boolean party;
 	private Item weapon, armor, ring;
@@ -69,6 +69,14 @@ public class Unit {
 	public void setDef(int def) {
 		this.def = def;
 	}
+	
+	public int getMaxExp() {
+		return maxExp;
+	}
+	
+	public void setMaxExp(int maxExp) {
+		this.maxExp = maxExp;
+	}
 
 	public int getExp() {
 		return exp;
@@ -132,6 +140,20 @@ public class Unit {
 
 	public void setRing(Item ring) {
 		this.ring = ring;
+	}
+	
+	public void printStatus() {
+		System.out.printf("     [%s][lv.%d]     (Party : %b)\n", level, party);
+		System.out.printf("[HP    :  %d]\n", hp);
+		System.out.printf("[DEF   :  %d]\n", def);
+		System.out.printf("[POWER :  %d]\n", power);
+		if(maxExp/exp > 1) {
+			System.out.printf("(%d/%d ■■■■■■■■■■■■  )\n", exp, maxExp);
+		}else if(maxExp/exp > 2) {
+			System.out.printf("(%d/%d ■■■■■■■■      )\n", exp, maxExp);
+		}else if(maxExp/exp > 3) {
+			System.out.printf("(%d/%d ■■■■          )\n", exp, maxExp);
+		}
 	}
 	
 }
