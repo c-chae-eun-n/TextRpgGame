@@ -18,6 +18,30 @@ public class GameManager {
 		stageList.put("SETTING", new StageSetting());
 		stageList.put("BOSS", new StageBoss());
 		nextStage = "TITLE";
+	}	
+	
+	private boolean changeStage() {
+		System.out.println("현재 스테이지 : " + curStage);
+		System.out.println("다음 스테이지 : " + nextStage);
+		
+		if(curStage.equals(nextStage))
+			return true;
+		
+		curStage = nextStage;
+		Stage stage = stageList.get(curStage);
+		stage.init();
+		
+		boolean run = true;
+		while(run) {
+			run = stage.update();
+			if(run == false) 
+				break;
+		}
+		
+		if(nextStage.equals("")) 
+			return false;
+		else 
+			return true;
 	}
 
 }
