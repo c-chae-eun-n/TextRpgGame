@@ -14,4 +14,8 @@ public class Guild {
 	public static Guild getInstance() {
 		return instance;
 	}
+	
+	public void setGuild(Unit Player) {
+		
+	}
 }
