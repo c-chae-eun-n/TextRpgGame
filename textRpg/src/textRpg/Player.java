@@ -1,6 +1,6 @@
 package textRpg;
 
-public class Player extends Unit {
+public abstract class Player extends Unit {
 	
 	public static int money;
 	public static Guild guild = new Guild();
@@ -11,10 +11,10 @@ public class Player extends Unit {
 	public Player(String name, int level, int maxHp, int power, int def, int exp) {
 		super(name, level, maxHp, power, def, exp);
 	}
-	
 
 	public void init() {
 		money = 1000;
 	}
 	
+	public abstract void skill();
 }
