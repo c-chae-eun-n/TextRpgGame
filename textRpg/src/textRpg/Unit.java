@@ -156,4 +156,27 @@ public class Unit {
 		}
 	}
 	
+	public void printItem() {
+		if(weapon == null) {
+			System.out.println("[⚔️무기⚔️ : 없음]");
+		} else {
+			
+		}
+		if(armor == null) {
+			System.out.println("[🛡️방어구🛡️ : 없음]");
+		} else {
+			
+		}
+		if(ring == null) {
+			System.out.println("[💍반지💍 : 없음]");
+		} else {
+			
+		}
+		if(potion == 0) {
+			System.out.println("[🧪물약🧪 : 없음]");
+		} else {
+			
+		}
+	}
+	
 }
