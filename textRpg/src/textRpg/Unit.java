@@ -179,4 +179,8 @@ public class Unit {
 		}
 	}
 	
+	@Override
+	public String toString() {
+		return String.format("[%s] [%d/%d][%d]", name, hp, maxHp, power);
+	}
 }
