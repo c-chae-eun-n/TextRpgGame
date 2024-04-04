@@ -14,4 +14,10 @@ public class Monster {
 		this.hp = maxHp;
 		this.power = power;
 	}
+	
+	public void init(int maxHp, int power) {
+		this.hp = maxHp;
+		this.maxHp = maxHp;
+		this.power = power;
+	}
 }
