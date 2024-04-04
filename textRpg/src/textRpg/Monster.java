@@ -20,4 +20,15 @@ public class Monster {
 		this.maxHp = maxHp;
 		this.power = power;
 	}
+	
+	public void attack(Unit target) {
+		target.setHp(power - target.getDef());
+		System.out.println();
+		System.out.printf("[%s]가 [%s]에게 %d의 데미지를 입힙니다.\n", name, target.getName(), power - target.getDef());
+		
+		if(target.getHp() <= 0) {
+			System.out.printf("[%s] 🪦사망🪦\n", target.getName());
+			target.setHp(0);
+		}
+	}
 }
