@@ -34,6 +34,7 @@ public class GameManager {
 	private boolean changeStage() {
 		System.out.println("현재 스테이지 : " + curStage);
 		System.out.println("다음 스테이지 : " + nextStage);
+		System.out.println();
 		
 		if(curStage.equals(nextStage))
 			return true;
