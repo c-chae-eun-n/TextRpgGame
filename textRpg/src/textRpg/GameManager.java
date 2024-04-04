@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class GameManager {
 	public static Scanner scan = new Scanner(System.in);
+	
 	public static String nextStage = "";
 	private String curStage = "";
 	
@@ -56,6 +57,7 @@ public class GameManager {
 	
 	public void run() {
 		boolean run = true;
+		init();
 		while(true) {
 			run = changeStage();
 			if(run == false)
