@@ -15,7 +15,7 @@ public class Guild {
 		return instance;
 	}
 	
-	public void setGuild(Unit Player) {
-		
+	public void setGuild(Player player) {
+		guildList.add(player);
 	}
 }
