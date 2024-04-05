@@ -83,9 +83,9 @@ public class Guild {
 	}
 	
 	private Player recruitPlayer() {
-	    String[] n1 = { "박", "이", "김", "최", "허", "지", "오" };
-	    String[] n2 = { "채", "예", "주", "민", "재", "지", "유" };
-	    String[] n3 = { "리", "지", "민", "수", "영", "은", "원" };
+	    String[] n1 = { "박", "이", "김", "최", "허", "지", "오", "도", "송", "정" };
+	    String[] n2 = { "채", "예", "주", "민", "재", "지", "유", "성", "아", "나" };
+	    String[] n3 = { "리", "지", "민", "수", "영", "은", "원", "효", "연", "린" };
 	    String name = "";
 	    while(true) {
 	    	name = n1[random.nextInt(n1.length)];
