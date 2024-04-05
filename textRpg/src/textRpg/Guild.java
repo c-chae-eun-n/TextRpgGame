@@ -41,9 +41,9 @@ public class Guild {
 	
 	public void guildMenu() {
 		while(true) {
-			System.out.println("~~~~~~~~~~~~~ [⚜️길드⚜️] ~~~~~~~~~~~~~\n");
-			System.out.println(" [1]길드 목록  [2]길드원 모집  [3]길드원 삭제\n");
-			System.out.println(" [4]길드원 정렬 [0]뒤로가기\n");
+			System.out.println("~~~~~~~~~~~~~ [⚜️길드⚜️] ~~~~~~~~~~~~~~\n");
+			System.out.println(" [1]길드목록📃 [2]길드원모집🚨 [3]길드원삭제🗑️\n");
+			System.out.println(" [4]길드원정렬📊 [0]뒤로가기🔙\n");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 			
 			int sel = GameManager.scan.nextInt();
