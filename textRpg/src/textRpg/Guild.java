@@ -49,7 +49,7 @@ public class Guild {
 				setGuild(recruitPlayer());
 			}
 			else if(sel == DELETE) {
-				
+				deletePlayer();
 			}
 			else if(sel == RECRUIT) {
 				
@@ -119,5 +119,21 @@ public class Guild {
 	    return player;
 	}
 	
-
+	private void deletePlayer() {
+		printPlayerStatusAll();
+		System.out.println("삭제할 ⚜️길드원⚜️의 이름을 입력하세요.");
+		String name = GameManager.scan.next();
+		int index = -1;
+		for(int i=0; i<guildList.size(); i++) {
+			if(name.equals(guildList.get(i).getName())) 
+				index = i;
+		}
+		
+		if(index != -1) {
+			guildList.remove(index);
+			System.out.println("⚜️길드원⚜️ 삭제가 완료되었습니다.");
+		}else {
+			System.err.println("존재하지 않는 ⚜️길드원⚜️입니다.");
+		}
+	}
 }
