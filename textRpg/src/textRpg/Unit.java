@@ -19,6 +19,7 @@ public class Unit {
 		this.power = power;
 		this.def = def;
 		this.exp = exp;
+		this.maxExp = 143;	//
 		this.potion = 0;
 		this.setParty(false);
 		this.setWeapon(null);
@@ -143,16 +144,18 @@ public class Unit {
 	}
 	
 	public void printStatus() {
-		System.out.printf("     [%s][lv.%d]     (Party : %b)\n", level, party);
-		System.out.printf("[HP    :  %d]\n", hp);
-		System.out.printf("[DEF   :  %d]\n", def);
-		System.out.printf("[POWER :  %d]\n", power);
-		if(maxExp/exp > 1) {
-			System.out.printf("(%d/%d ■■■■■■■■■■■■  )\n", exp, maxExp);
-		}else if(maxExp/exp > 2) {
-			System.out.printf("(%d/%d ■■■■■■■■      )\n", exp, maxExp);
-		}else if(maxExp/exp > 3) {
-			System.out.printf("(%d/%d ■■■■          )\n", exp, maxExp);
+		System.out.printf("     [%s][lv.%d]   (Party : %b)\n", name, level, party);
+		System.out.println();
+		System.out.printf("            [HP    :  %d]\n", hp);
+		System.out.printf("            [DEF   :  %d]\n", def);
+		System.out.printf("            [POWER :  %d]\n", power);
+		System.out.println();
+		if(maxExp/exp < 2) {
+			System.out.printf("       (%d/%d ■■■■■■■■■■■■  )\n", exp, maxExp);
+		}else if(maxExp/exp < 3) {
+			System.out.printf("       (%d/%d ■■■■■■■■      )\n", exp, maxExp);
+		}else {
+			System.out.printf("       (%d/%d ■■■■          )\n", exp, maxExp);
 		}
 	}
 	
