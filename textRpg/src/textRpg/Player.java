@@ -15,4 +15,10 @@ public class Player extends Unit {
 	public void init() {
 		money = 1000;
 	}
+	
+	@Override
+	public void skill(Monster target) {
+		// TODO Auto-generated method stub
+		super.skill(target);
+	}
 }
