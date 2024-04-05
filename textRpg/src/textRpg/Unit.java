@@ -153,7 +153,7 @@ public class Unit {
 		if(maxExp/exp < 2) {
 			System.out.printf("       (%d/%d ■■■■■■■■■■■■  )\n", exp, maxExp);
 		}else if(maxExp/exp < 3) {
-			System.out.printf("       (%d/%d ■■■■■■■■      )\n", exp, maxExp);
+			System.out.printf("       (%d/%d ■■■■■■■       )\n", exp, maxExp);
 		}else {
 			System.out.printf("       (%d/%d ■■■■          )\n", exp, maxExp);
 		}
