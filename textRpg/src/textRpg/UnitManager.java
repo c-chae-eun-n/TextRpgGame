@@ -20,7 +20,7 @@ public class UnitManager {
 	
 	private static UnitManager instance = new UnitManager();
 	
-	public UnitManager getInstance() {
+	public static UnitManager getInstance() {
 		return instance;
 	}
 	
