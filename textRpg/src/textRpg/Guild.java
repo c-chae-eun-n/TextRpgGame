@@ -57,7 +57,7 @@ public class Guild {
 				deletePlayer();
 			}
 			else if(sel == SORT) {
-				
+				sortGuild();
 			}
 			else if(sel == EXIT) {
 				break;
@@ -139,4 +139,14 @@ public class Guild {
 		}
 	}
 	
+	private void sortGuildMenu() {
+		System.out.println("~~~~~~~~~~~~~ [⚜️정렬⚜️] ~~~~~~~~~~~~~\n");
+		System.out.println(" [1]이름        [2]레벨       [3]체력\n");
+		System.out.println(" [4]방어력       [5]공격력      [0]뒤로가기\n");
+		System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+	}
+	
+	private void sortGuild() {
+		sortGuildMenu();
+	}
 }
