@@ -1,5 +1,6 @@
 package textRpg;
 
+import java.util.Random;
 import java.util.Vector;
 
 public class Guild {
@@ -9,6 +10,8 @@ public class Guild {
 	private final int RECRUIT = 4;
 	private final int CHANGE = 5;
 	private final int EXIT = 0;
+	
+	private Random random = new Random();
 	
 	
 	private Vector<Player> guildList;
@@ -43,7 +46,7 @@ public class Guild {
 				printPlayerStatusAll();
 			}
 			else if(sel == ADD) {
-				
+				setGuild(recruitPlayer());
 			}
 			else if(sel == DELETE) {
 				
@@ -75,5 +78,32 @@ public class Guild {
 	
 	private void printPlayerStatus(int sel) {
 		guildList.get(sel).printStatus();
+	}
+	
+	private Player recruitPlayer() {
+	    String[] n1 = { "박", "이", "김", "최", "허", "지", "오" };
+	    String[] n2 = { "채", "예", "주", "민", "재", "지", "유" };
+	    String[] n3 = { "리", "지", "민", "수", "영", "은", "원" };
+	    
+	    String name = n1[random.nextInt(n1.length)];
+	    name += n2[random.nextInt(n2.length)];
+	    name += n3[random.nextInt(n3.length)];
+	    
+	    int rNum = random.nextInt(6)+5;
+	    int rNum2 = random.nextInt(20)+30;
+	    int hp = rNum * 11;
+	    int power = rNum + rNum2;
+	    rNum2 = random.nextInt(20)+30;
+	    int def = rNum + rNum2;
+	    int level = rNum;
+	    int exp = rNum * 9;
+	    Player player = new Player(name, level, hp, power, def, exp);
+
+		System.out.println("~~~~~~~~~~~~~ [⚜️길드원⚜️] ~~~~~~~~~~~~\n");
+		player.printStatus();
+		System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+		System.out.println("⚜️길드원⚜️ 모집을 완료했습니다.\n");
+		
+	    return player;
 	}
 }
