@@ -26,7 +26,8 @@ public class Item {
 		System.out.println(" [4]포션        [0]뒤로가기\n");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	}
-	private void setItem() {
+	
+	public void setItem() {
 		while(true) {
 			printSetItemMenu();
 			int sel = GameManager.scan.nextInt();
