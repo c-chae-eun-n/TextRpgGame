@@ -10,6 +10,12 @@ public class Guild {
 	private final int SORT = 4;
 	private final int EXIT = 0;
 	
+	private final int NAME = 1;
+	private final int LEVEL = 2;
+	private final int HP = 3;
+	private final int DEF = 4;
+	private final int POWER = 5;
+	
 	private Random random = new Random();
 	
 	
@@ -132,4 +138,5 @@ public class Guild {
 			System.err.println("존재하지 않는 ⚜️길드원⚜️입니다.");
 		}
 	}
+	
 }
