@@ -6,7 +6,7 @@ import java.util.Vector;
 public class UnitManager {
 	
 	private Random random = new Random();
-	private Player player = new Player();
+	public Player player = new Player();
 	
 	private Vector<Player> playerList = new Vector<>();
 	private Vector<Monster> monsterList = new Vector<>();
