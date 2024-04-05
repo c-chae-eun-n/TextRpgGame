@@ -140,13 +140,54 @@ public class Guild {
 	}
 	
 	private void sortGuildMenu() {
-		System.out.println("~~~~~~~~~~~~~ [⚜️정렬⚜️] ~~~~~~~~~~~~~\n");
+		System.out.println("~~~~~~~~~~~~~ [🔄️정렬🔄️] ~~~~~~~~~~~~~\n");
 		System.out.println(" [1]이름        [2]레벨       [3]체력\n");
-		System.out.println(" [4]방어력       [5]공격력      [0]뒤로가기\n");
-		System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+		System.out.println(" [4]방어력      [5]공격력      [0]뒤로가기\n");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	}
 	
 	private void sortGuild() {
-		sortGuildMenu();
+		while(true) {
+			sortGuildMenu();
+			int sel = GameManager.scan.nextInt();
+			if(sel == NAME) {
+				sortByName();
+				printPlayerStatusAll();
+			}
+			else if(sel == LEVEL) {
+				
+			}
+			else if(sel == HP) {
+				
+			}
+			else if(sel == DEF) {
+				
+			}
+			else if(sel == POWER) {
+				
+			}
+			else if(sel == EXIT) {
+				break;
+			}
+		}
+	}
+	
+	private void sortByName() {
+		for(int i=0; i<guildList.size(); i++) {
+			Player player = guildList.get(i);
+			int first = i;
+			for(int j=i; j<guildList.size(); j++) {
+				Player target = guildList.get(j);
+				if(player.getName().compareTo(target.getName()) > 0) {
+					player = target;
+					first = j;
+				}
+			}
+			
+			if(first != i) {
+				guildList.set(first, guildList.get(i));
+				guildList.set(i, player);
+			}
+		}
 	}
 }
