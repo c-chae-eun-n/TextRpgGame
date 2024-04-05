@@ -157,13 +157,13 @@ public class Guild {
 				sortByLevel();
 			}
 			else if(sel == HP) {
-				
+				sortByHp();
 			}
 			else if(sel == DEF) {
-				
+				sortByDef();
 			}
 			else if(sel == POWER) {
-				
+				sortByPower();
 			}
 			else if(sel == EXIT) {
 				break;
@@ -201,6 +201,63 @@ public class Guild {
 			for(int j=i; j<guildList.size(); j++) {
 				Player target = guildList.get(j);
 				if(player.getLevel() < target.getLevel()) {
+					player = target;
+					first = j;
+				}
+			}
+			
+			if(first != i) {
+				guildList.set(first, guildList.get(i));
+				guildList.set(i, player);
+			}
+		}
+	}
+	
+	private void sortByHp() {
+		for(int i=0; i<guildList.size(); i++) {
+			Player player = guildList.get(i);
+			int first = i;
+			for(int j=i; j<guildList.size(); j++) {
+				Player target = guildList.get(j);
+				if(player.getHp() < target.getHp()) {
+					player = target;
+					first = j;
+				}
+			}
+			
+			if(first != i) {
+				guildList.set(first, guildList.get(i));
+				guildList.set(i, player);
+			}
+		}
+	}
+	
+	private void sortByDef() {
+		for(int i=0; i<guildList.size(); i++) {
+			Player player = guildList.get(i);
+			int first = i;
+			for(int j=i; j<guildList.size(); j++) {
+				Player target = guildList.get(j);
+				if(player.getDef() < target.getDef()) {
+					player = target;
+					first = j;
+				}
+			}
+			
+			if(first != i) {
+				guildList.set(first, guildList.get(i));
+				guildList.set(i, player);
+			}
+		}
+	}
+	
+	private void sortByPower() {
+		for(int i=0; i<guildList.size(); i++) {
+			Player player = guildList.get(i);
+			int first = i;
+			for(int j=i; j<guildList.size(); j++) {
+				Player target = guildList.get(j);
+				if(player.getPower() < target.getPower()) {
 					player = target;
 					first = j;
 				}
