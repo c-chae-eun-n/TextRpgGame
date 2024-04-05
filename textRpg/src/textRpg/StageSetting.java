@@ -9,6 +9,7 @@ public class StageSetting extends Stage {
 	private final int EXIT = 0;
 	
 	private UnitManager unitManager = UnitManager.getInstance();
+	private Shop shop = Shop.getInstance();
 
 	@Override
 	public boolean update() {
@@ -23,7 +24,7 @@ public class StageSetting extends Stage {
 				unitManager.player.guildMenu();
 			}
 			else if(sel == SHOP) {
-				
+				shop.shopMenu();
 			}
 			else if(sel == INVENTORY) {
 				
