@@ -84,10 +84,22 @@ public class Guild {
 	    String[] n1 = { "박", "이", "김", "최", "허", "지", "오" };
 	    String[] n2 = { "채", "예", "주", "민", "재", "지", "유" };
 	    String[] n3 = { "리", "지", "민", "수", "영", "은", "원" };
-	    
-	    String name = n1[random.nextInt(n1.length)];
-	    name += n2[random.nextInt(n2.length)];
-	    name += n3[random.nextInt(n3.length)];
+	    String name = "";
+	    while(true) {
+	    	name = n1[random.nextInt(n1.length)];
+	    	name += n2[random.nextInt(n2.length)];
+	    	name += n3[random.nextInt(n3.length)];
+	    	
+	    	boolean isDupl = false;
+	    	for(int i=0; i<guildList.size(); i++) {
+	    		if(name.equals(guildList.get(i).getName())) 
+	    			isDupl = true;
+	    	}
+	    	
+	    	if(!isDupl) {
+	    		break;
+	    	}
+	    }
 	    
 	    int rNum = random.nextInt(6)+5;
 	    int rNum2 = random.nextInt(20)+30;
@@ -106,4 +118,6 @@ public class Guild {
 		
 	    return player;
 	}
+	
+
 }
