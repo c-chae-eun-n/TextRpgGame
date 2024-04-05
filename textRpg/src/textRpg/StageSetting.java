@@ -15,8 +15,8 @@ public class StageSetting extends Stage {
 	public boolean update() {
 		while(true) {
 			System.out.println("~~~~~~~~~~~~~ [🔧설정🔧] ~~~~~~~~~~~~~\n");
-			System.out.println(" [1]길드        [2]상점       [3]인벤토리\n");
-			System.out.println(" [4]저장        [5]로드       [0]뒤로가기\n");
+			System.out.println(" [1]길드⚜️     [2]상점🛒    [3]인벤토리🎒\n");
+			System.out.println(" [4]저장📁     [5]로드📂    [0]뒤로가기🔙\n");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 			
 			int sel = GameManager.scan.nextInt();
