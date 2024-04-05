@@ -16,10 +16,27 @@ public class Item {
 		this.name = name;
 	}
 	
+	public int getKind() {
+		return kind;
+	}
+
+	public int getPower() {
+		return power;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public String getName() {
+		return name;
+	}
+	
 	public void printSetItemMenu() {
 		System.out.println(GameManager.red + "~~~~~~~~~~~~~ [⛔관리자⛔] ~~~~~~~~~~~~\n");
 		System.out.println(" [1]무기        [2]갑옷       [3]장신구\n");
 		System.out.println(" [4]포션        [0]뒤로가기\n");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" + GameManager.exit);
 	}
+
 }
