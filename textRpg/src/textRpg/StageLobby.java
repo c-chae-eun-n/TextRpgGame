@@ -4,8 +4,7 @@ public class StageLobby extends Stage {
 
 	@Override
 	public boolean update() {
-		System.out.println("~~~~~~~~~~~~ [🏰성 내부🏰] ~~~~~~~~~~~~");
-		System.out.println();
+		System.out.println("~~~~~~~~~~~~ [🏰성 내부🏰] ~~~~~~~~~~~~\n");
 		System.out.println(" [1]전투하러가기⚔️ [2]준비하기🔧‍ [3]종료하기🏴\n");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 		int sel = 0;
