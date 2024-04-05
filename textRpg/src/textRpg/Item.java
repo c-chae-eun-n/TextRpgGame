@@ -9,7 +9,7 @@ public class Item {
 	private int kind, power, price;
 	private String name;
 	
-	public void Item(String name, int kind, int power, int price) {
+	public Item(String name, int kind, int power, int price) {
 		this.kind = kind;
 		this.power = power;
 		this.price = price;
