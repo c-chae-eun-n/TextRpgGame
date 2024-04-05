@@ -11,6 +11,8 @@ public class Guild {
 	private final int CHANGE = 5;
 	private final int EXIT = 0;
 	
+	private final int SIZE = 4;
+	
 	private Random random = new Random();
 	
 	
