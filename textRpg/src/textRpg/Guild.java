@@ -18,4 +18,10 @@ public class Guild {
 	public void setGuild(Player player) {
 		guildList.add(player);
 	}
+	
+	public Player getGuildPlayer(int num) {
+		return guildList.get(num);
+	}
+	
+	
 }
