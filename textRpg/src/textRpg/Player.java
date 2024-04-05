@@ -21,4 +21,8 @@ public class Player extends Unit {
 		// TODO Auto-generated method stub
 		super.skill(target);
 	}
+	
+	public void guildMenu() {
+		guild.guildMenu();
+	}
 }
