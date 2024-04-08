@@ -20,13 +20,17 @@ public class Inventory {
 		}
 		while(true) {
 			System.out.println("~~~~~~~~~~~~ [🎒인벤토리🎒] ~~~~~~~~~~~~\n");
-			System.out.println(" [1]착용🪞     [2]판매💰    [0]뒤로가기🔙\n");
+			System.out.println(" [1]착용🪞 [2] 제거🚫 [3]판매💰 [0]뒤로가기🔙\n");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			System.out.print(" 메뉴 번호 입력 : ");
 			int sel = GameManager.scan.nextInt();
 			if(sel == 1) {
 				wearEquip();
 			}
 			else if(sel == 2) {
+				
+			}
+			else if(sel == 3) {
 				
 			}
 			else if(sel == 0) {
