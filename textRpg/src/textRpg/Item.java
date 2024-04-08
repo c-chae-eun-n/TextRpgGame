@@ -11,26 +11,26 @@ public class Item {
 	private String name;
 	
 	public Item(String name, int kind, int power, int price) {
+		this.name = name;
 		this.kind = kind;
 		this.power = power;
 		this.price = price;
-		this.name = name;
 	}
 	
 	public int getKind() {
-		return kind;
+		return this.kind;
 	}
 
 	public int getPower() {
-		return power;
+		return this.power;
 	}
 
 	public int getPrice() {
-		return price;
+		return this.price;
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	@Override
