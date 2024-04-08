@@ -265,4 +265,8 @@ public class Guild {
 			}
 		}
 	}
+	
+	public int guildListSize() {
+		return guildList.size();
+	}
 }
