@@ -11,14 +11,27 @@ public class GameManager {
 	
     public static final String red = "\u001B[31m" ;
     public static final String exit = "\u001B[0m" ;
+    
+    public static final String name = "김철수";
 	
 	public static String nextStage = "";
 	private String curStage = "";
 	
-	Map<String, Stage> stageList = new HashMap<String, Stage>();
+	private Map<String, Stage> stageList = new HashMap<String, Stage>();
+	
+	private UnitManager unitManager = UnitManager.getInstance();
+	private Guild guild = Guild.getInstance();
 	
 	private GameManager() {
-		
+	    int rNum = random.nextInt(6)+5;
+	    int rNum2 = random.nextInt(20)+30;
+	    int hp = rNum * 11;
+	    int power = rNum + rNum2;
+	    rNum2 = random.nextInt(20)+30;
+	    int def = rNum + rNum2;
+		Player player = new Player(name, 1, hp, power, def, 0);
+		unitManager.create(player);
+		guild.setGuild(player);
 	}
 	
 	private static GameManager instance = new GameManager();
