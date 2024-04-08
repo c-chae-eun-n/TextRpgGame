@@ -28,7 +28,7 @@ public class Inventory {
 				wearEquip();
 			}
 			else if(sel == 2) {
-				
+				removeEquip();
 			}
 			else if(sel == 3) {
 				
@@ -51,17 +51,25 @@ public class Inventory {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			System.out.println(" 착용할 🛠️장비🛠️ 번호 입력 : ");
 			int sel = GameManager.scan.nextInt();
-			if(sel == Item.WEAPON) {
+			if(sel == Item.WEAPON || sel == Item.ARMOR || sel == Item.RING) {
 				int size = printItemAll(sel);
 				wearItem(sel, size);
 			}
-			else if(sel == Item.ARMOR) {
-				int size = printItemAll(sel);
-				wearItem(sel, size);
+			else if(sel == 0) {
+				break;
 			}
-			else if(sel == Item.RING) {
-				int size = printItemAll(sel);
-				wearItem(sel, size);
+		}
+	}
+	
+	private void removeEquip() {
+		while(true) {
+			player.printItem();
+			System.out.println(" [1]무기⚔️ [2]갑옷🥼 [3]장신구💍 [0]뒤로가기🔙\n");
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			System.out.println(" 제거할 🛠️장비🛠️ 번호 입력 : ");
+			int sel = GameManager.scan.nextInt();
+			if(sel == Item.WEAPON || sel == Item.ARMOR || sel == Item.RING) {
+				removeItem(sel);
 			}
 			else if(sel == 0) {
 				break;
@@ -100,7 +108,7 @@ public class Inventory {
 		
 		int num = -1;
 		while(true) {
-			System.out.println(" 착용 할 📦아이템📦 번호 입력");
+			System.out.print(" 착용 할 📦아이템📦 번호 입력 : ");
 			num = GameManager.scan.nextInt();
 			if(num >= 1 && num <= size)
 				break;
@@ -119,6 +127,32 @@ public class Inventory {
 		player.setPower(player.getPower() + item.getPower());
 		System.out.println(" " + item.getName() + " 📦아이템📦을 착용하였습니다.");
 		System.out.printf(" 파워가 %d 증가하였습니다.\n\n", item.getPower());
+	}
+	
+	private void removeItem(int sel) {
+		if(sel == Item.WEAPON && player.getWeapon() == null) {
+			System.err.println("\t착용중인 📦아이템📦이 없습니다.\n");
+			return;
+		}else if(sel == Item.WEAPON && player.getWeapon() != null) {
+			player.setWeapon(null);
+			System.out.println(" 📦아이템📦을 제거하였습니다.");
+		}
+		
+		else if(sel == Item.ARMOR && player.getArmor() == null) {
+			System.err.println("\t착용중인 📦아이템📦이 없습니다.\n");
+			return;
+		}else if(sel == Item.ARMOR && player.getArmor() != null) {
+			player.setArmor(null);
+			System.out.println(" 📦아이템📦을 제거하였습니다.");
+		}
+		
+		else if(sel == Item.RING && player.getRing() == null) {
+			System.err.println("\t착용중인 📦아이템📦이 없습니다.\n");
+			return;
+		}else if(sel == Item.RING && player.getRing() != null) {
+			player.setRing(null);
+			System.out.println(" 📦아이템📦을 제거하였습니다.");
+		}
 	}
 	
 	private Item findItemByNumber(int sel, int number) {
