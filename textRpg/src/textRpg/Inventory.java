@@ -41,22 +41,52 @@ public class Inventory {
 	}
 	
 	private void wearEquip() {
-		player.printItem();
-		System.out.println(" [1]무기⚔️ [2]갑옷🥼 [3]장신구💍 [4]포션🧪 \n");
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.println(" 착용할 🛠️장비🛠️ 번호 입력 : ");
-		int sel = GameManager.scan.nextInt();
-		if(sel == Item.WEAPON) {
-			
+		while(true) {
+			player.printItem();
+			System.out.println(" [1]무기⚔️      [2]갑옷🥼     [3]장신구💍  \n");
+			System.out.println(" [4]포션🧪      [0]뒤로가기🔙\n");
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			System.out.println(" 착용할 🛠️장비🛠️ 번호 입력 : ");
+			int sel = GameManager.scan.nextInt();
+			if(sel == Item.WEAPON) {
+				int size = printItemAll(sel);
+			}
+			else if(sel == Item.ARMOR) {
+				int size = printItemAll(sel);
+			}
+			else if(sel == Item.RING) {
+				int size = printItemAll(sel);
+			}
+			else if(sel == Item.POTION) {
+				int size = printItemAll(sel);
+			}
+			else if(sel == 0) {
+				break;
+			}
 		}
-		else if(sel == Item.ARMOR) {
-			
+	}
+	
+	private int printItemAll(int sel) {
+		int size = 0;
+		
+		if(sel == Item.WEAPON)
+			System.out.println("~~~~~~~~~~~~~ [⚔️무기⚔️] ~~~~~~~~~~~~~\n");
+		else if(sel == Item.ARMOR)
+			System.out.println("~~~~~~~~~~~~~ [🥼갑옷🥼] ~~~~~~~~~~~~~\n");
+		else if(sel == Item.RING)
+			System.out.println("~~~~~~~~~~~~~ [💍장신구💍] ~~~~~~~~~~~~\n");
+		else if(sel == Item.POTION)
+			System.out.println("~~~~~~~~~~~~~ [🧪포션🧪] ~~~~~~~~~~~~~\n");
+		for(int i=0; i<invenList.size(); i++) {
+			Item item = invenList.get(i);
+			if(sel == item.getKind()) {
+				System.out.printf(" [%d] ", i+1);
+				System.out.println(item);
+				size ++;
+			}
 		}
-		else if(sel == Item.RING) {
-			
-		}
-		else if(sel == Item.POTION) {
-			
-		}
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+		
+		return size;
 	}
 }
