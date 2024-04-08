@@ -179,7 +179,7 @@ public class Unit {
 		if(armor == null) {
 			System.out.println("           [🛡️방어구🛡️ : 없음]");
 		} else {
-			System.out.println("           [🛡️방어구🛡️  : "+armor.getName()+"]");
+			System.out.println("           [🛡️방어구🛡️ : "+armor.getName()+"]");
 		}
 		if(ring == null) {
 			System.out.println("           [💍반지💍  : 없음]");
