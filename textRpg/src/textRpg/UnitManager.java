@@ -6,20 +6,25 @@ public class UnitManager {
 	
 	public Player player = new Player();
 	
-	private Vector<Player> playerList = new Vector<>();
-	private Vector<Monster> monsterList = new Vector<>();
+	private Vector<Player> playerList;
+	private Vector<Monster> monsterList;
 	
 	private String path = "textRpg.";
 	private String monsters[] = {"MonsterGhost","MonsterWolf","MonsterBat"};
 
 	private UnitManager() {
-		
+		playerList = new Vector<>();
+		monsterList = new Vector<>();
 	}
 	
 	private static UnitManager instance = new UnitManager();
 	
 	public static UnitManager getInstance() {
 		return instance;
+	}
+	
+	public void create(Player player) {
+		playerList.add(player);
 	}
 	
 	public void monsterRandomSet(int size) {
