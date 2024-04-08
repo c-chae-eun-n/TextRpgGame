@@ -71,17 +71,7 @@ public class Shop {
 	private void setWeapon() {
 		Item item = null;
 		
-		System.out.print(GameManager.red + " 아이템 이름 : ");
-		String name = "";
-		while(true) {
-			name = GameManager.scan.next();
-			if(isValid(name)) {
-				System.err.println(" 이미 존재하는 이름입니다.");
-				continue;
-			}else {
-				break;
-			}
-		}
+		String name = setName();
 		
 		int rNum = GameManager.random.nextInt(6)+5;
 	    int rNum2 = GameManager.random.nextInt(20)+30;
@@ -115,5 +105,22 @@ public class Shop {
 		}
 		
 		return isValid;
+	}
+	
+	private String setName() {
+		String name = "";
+
+		System.out.print(GameManager.red + " 아이템 이름 : ");
+		while(true) {
+			name = GameManager.scan.next();
+			if(isValid(name)) {
+				System.err.println(" 이미 존재하는 이름입니다.");
+				continue;
+			}else {
+				break;
+			}
+		}
+		
+		return name;
 	}
 }
