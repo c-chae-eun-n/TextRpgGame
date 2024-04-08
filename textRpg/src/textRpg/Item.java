@@ -33,4 +33,13 @@ public class Item {
 		return name;
 	}
 
+	@Override
+	public String toString() {
+		String info = "";
+		info += "~~~~~~~~~~~~~ [" + name + "] ~~~~~~~~~~~~~\n";
+		info += "\n             [Power    :  " + power + "]\n";
+		info += "             [Price    :  " + price + "]\n";
+		info += "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+		return info;
+	}
 }
