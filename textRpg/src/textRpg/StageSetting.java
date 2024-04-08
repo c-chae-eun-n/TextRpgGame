@@ -27,7 +27,7 @@ public class StageSetting extends Stage {
 				shop.shopMenu();
 			}
 			else if(sel == INVENTORY) {
-				
+				Player.inven.inventoryMenu();
 			}
 			else if(sel == SAVE) {
 				
