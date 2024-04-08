@@ -11,7 +11,7 @@ public class Inventory {
 	}
 	
 	public void inventoryMenu() {
-		System.out.print(" 📦아이템📦 구매 할 플레이어의 이름 입력 : ");
+		System.out.print(" 🎒인벤토리🎒 사용 할 플레이어의 이름 입력 : ");
 		String name = GameManager.scan.next();
 		player = Player.guild.findPlayerByName(name);
 		if(player == null) {
@@ -43,22 +43,21 @@ public class Inventory {
 	private void wearEquip() {
 		while(true) {
 			player.printItem();
-			System.out.println(" [1]무기⚔️      [2]갑옷🥼     [3]장신구💍  \n");
-			System.out.println(" [4]포션🧪      [0]뒤로가기🔙\n");
-			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			System.out.println(" [1]무기⚔️ [2]갑옷🥼 [3]장신구💍 [0]뒤로가기🔙\n");
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			System.out.println(" 착용할 🛠️장비🛠️ 번호 입력 : ");
 			int sel = GameManager.scan.nextInt();
 			if(sel == Item.WEAPON) {
 				int size = printItemAll(sel);
+				wearItem(sel, size);
 			}
 			else if(sel == Item.ARMOR) {
 				int size = printItemAll(sel);
+				wearItem(sel, size);
 			}
 			else if(sel == Item.RING) {
 				int size = printItemAll(sel);
-			}
-			else if(sel == Item.POTION) {
-				int size = printItemAll(sel);
+				wearItem(sel, size);
 			}
 			else if(sel == 0) {
 				break;
@@ -75,18 +74,62 @@ public class Inventory {
 			System.out.println("~~~~~~~~~~~~~ [🥼갑옷🥼] ~~~~~~~~~~~~~\n");
 		else if(sel == Item.RING)
 			System.out.println("~~~~~~~~~~~~~ [💍장신구💍] ~~~~~~~~~~~~\n");
-		else if(sel == Item.POTION)
-			System.out.println("~~~~~~~~~~~~~ [🧪포션🧪] ~~~~~~~~~~~~~\n");
+		
+		int index = 1;
 		for(int i=0; i<invenList.size(); i++) {
 			Item item = invenList.get(i);
 			if(sel == item.getKind()) {
-				System.out.printf(" [%d] ", i+1);
-				System.out.println(item);
+				System.out.printf(" [%d] %s    power : %d\n", index ++, item.getName(), item.getPower());
 				size ++;
 			}
 		}
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 		
 		return size;
+	}
+	
+	private void wearItem(int sel, int size) {
+		if(size == 0) {
+			System.err.println("\t  📦아이템📦이 없습니다.\n");
+			return;
+		}
+		
+		int num = -1;
+		while(true) {
+			System.out.println(" 착용 할 📦아이템📦 번호 입력");
+			num = GameManager.scan.nextInt();
+			if(num >= 1 && num <= size)
+				break;
+		}
+		
+		Item item = findItemByNumber(sel, num);
+		if(sel == Item.WEAPON) {
+			player.setWeapon(item);
+		}
+		else if(sel == Item.ARMOR) {
+			player.setArmor(item);
+		}
+		else if(sel == Item.RING) {
+			player.setRing(item);
+		}
+		player.setPower(player.getPower() + item.getPower());
+		System.out.println(" " + item.getName() + " 📦아이템📦을 착용하였습니다.");
+		System.out.printf(" 파워가 %d 증가하였습니다.\n\n", item.getPower());
+	}
+	
+	private Item findItemByNumber(int sel, int number) {
+		Item item = null;
+		
+		int count = 0;
+		for(int i=0; i<invenList.size(); i++) {
+			Item target = invenList.get(i);
+			if(sel == target.getKind()) {
+				count ++;
+				if(count == number) 
+					item = target;
+			}
+		}
+		
+		return item;
 	}
 }
