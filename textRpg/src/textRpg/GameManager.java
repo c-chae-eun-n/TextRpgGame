@@ -2,10 +2,15 @@ package textRpg;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 
 public class GameManager {
 	public static Scanner scan = new Scanner(System.in);
+	public static Random random = new Random();
+	
+    public static final String red = "\u001B[31m" ;
+    public static final String exit = "\u001B[0m" ;
 	
 	public static String nextStage = "";
 	private String curStage = "";
