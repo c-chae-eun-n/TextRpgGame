@@ -269,4 +269,9 @@ public class Guild {
 	public int guildListSize() {
 		return guildList.size();
 	}
+	
+	public Player getGuildList(int index) {
+		Player player = guildList.get(index);
+		return player;
+	}
 }
