@@ -1,6 +1,5 @@
 package textRpg;
 
-import java.util.Random;
 import java.util.Vector;
 
 public class Guild {
@@ -15,9 +14,6 @@ public class Guild {
 	private final int HP = 3;
 	private final int DEF = 4;
 	private final int POWER = 5;
-	
-	private Random random = new Random();
-	
 	
 	private Vector<Player> guildList;
 	
@@ -88,9 +84,9 @@ public class Guild {
 	    String[] n3 = { "리", "지", "민", "수", "영", "은", "원", "효", "연", "린" };
 	    String name = "";
 	    while(true) {
-	    	name = n1[random.nextInt(n1.length)];
-	    	name += n2[random.nextInt(n2.length)];
-	    	name += n3[random.nextInt(n3.length)];
+	    	name = n1[GameManager.random.nextInt(n1.length)];
+	    	name += n2[GameManager.random.nextInt(n2.length)];
+	    	name += n3[GameManager.random.nextInt(n3.length)];
 	    	
 	    	boolean isDupl = false;
 	    	for(int i=0; i<guildList.size(); i++) {
@@ -103,11 +99,11 @@ public class Guild {
 	    	}
 	    }
 	    
-	    int rNum = random.nextInt(6)+5;
-	    int rNum2 = random.nextInt(20)+30;
+	    int rNum = GameManager.random.nextInt(6)+5;
+	    int rNum2 = GameManager.random.nextInt(20)+30;
 	    int hp = rNum * 11;
 	    int power = rNum + rNum2;
-	    rNum2 = random.nextInt(20)+30;
+	    rNum2 = GameManager.random.nextInt(20)+30;
 	    int def = rNum + rNum2;
 	    int level = rNum;
 	    int exp = rNum * 9;
