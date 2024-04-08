@@ -72,24 +72,8 @@ public class Shop {
 		Item item = null;
 		
 		String name = setName();
-		
-		int rNum = GameManager.random.nextInt(6)+5;
-	    int rNum2 = GameManager.random.nextInt(20)+30;
-	    int power = rNum + rNum2;
-	    
-	    System.out.print(" 아이템 가격 : ");
-	    int price = 0;
-	    while(true) {
-	    	try {
-				String input = GameManager.scan.next();
-	    		price = Integer.parseInt(input);
-			} catch (Exception e) {
-				System.err.println(" 숫자만 입력하세요.");
-			}
-	    	if(price >= 1) {
-	    		break;
-	    	}
-	    }
+	    int power = setPower();
+	    int price = setPrice();
 		
 		item = new Weapon(name, power, price);
 		itemList.add(item);
@@ -122,5 +106,34 @@ public class Shop {
 		}
 		
 		return name;
+	}
+	
+	private int setPower() {
+		int power = 0;
+		
+		int rNum = GameManager.random.nextInt(6)+5;
+	    int rNum2 = GameManager.random.nextInt(20)+30;
+	    power = rNum + rNum2;
+		
+		return power;
+	}
+	
+	private int setPrice() {
+		int price = 0;
+
+	    System.out.print(" 아이템 가격 : ");
+	    while(true) {
+	    	try {
+				String input = GameManager.scan.next();
+	    		price = Integer.parseInt(input);
+			} catch (Exception e) {
+				System.err.println(" 숫자만 입력하세요.");
+			}
+	    	if(price >= 1) {
+	    		break;
+	    	}
+	    }
+		
+		return price;
 	}
 }
