@@ -22,10 +22,6 @@ public class UnitManager {
 		return instance;
 	}
 	
-	public void init() {
-		player.init();
-	}
-	
 	public void monsterRandomSet(int size) {
 		for(int i=0; i<size; i++) {
 			int rIdx = GameManager.random.nextInt(monsters.length);
