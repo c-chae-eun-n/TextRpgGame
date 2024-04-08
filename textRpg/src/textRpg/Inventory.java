@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Inventory {
 	private ArrayList<Item> invenList;
+	private Player player;
 	
 	private Inventory() {
 		invenList = new ArrayList<>();
@@ -16,6 +17,13 @@ public class Inventory {
 	}
 	
 	public void inventoryMenu() {
+		System.out.print(" 📦아이템📦 구매 할 플레이어의 이름 입력 : ");
+		String name = GameManager.scan.next();
+		player = Player.guild.findPlayerByName(name);
+		if(player == null) {
+			System.err.println("존재하지 않는 플레이어입니다.");
+			return;
+		}
 		while(true) {
 			System.out.println("~~~~~~~~~~~~ [🎒인벤토리🎒] ~~~~~~~~~~~~\n");
 			System.out.println(" [1]착용🪞     [2]판매💰    [0]뒤로가기🔙\n");
