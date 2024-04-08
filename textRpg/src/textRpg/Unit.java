@@ -2,7 +2,7 @@ package textRpg;
 
 public class Unit {
 	private String name;
-	private int level, hp, maxHp, power, def, maxExp, exp, potion;
+	private int level, hp, maxHp, power, def, maxExp, exp, potion, money;
 	private boolean isStun, isShield;
 	private boolean party;
 	private Item weapon, armor, ring;
@@ -21,6 +21,7 @@ public class Unit {
 		this.exp = exp;
 		this.maxExp = 143;	//
 		this.potion = 0;
+		this.money = 1000;
 		this.setParty(false);
 		this.setWeapon(null);
 		this.setArmor(null);
@@ -93,6 +94,14 @@ public class Unit {
 
 	public void setPotion(int potion) {
 		this.potion = potion;
+	}
+
+	public int getMoney() {
+		return money;
+	}
+
+	public void setMoney(int money) {
+		this.money = money;
 	}
 
 	public boolean isStun() {
