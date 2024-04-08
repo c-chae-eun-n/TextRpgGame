@@ -14,4 +14,9 @@ public class Inventory {
 	public static Inventory getInstance() {
 		return instance;
 	}
+	
+	public void create(Item item) {
+		invenList.add(item);
+		System.out.println(" 📦"+item.getName()+" 아이템📦 구매가 완료되었습니다.\n");
+	}
 }
