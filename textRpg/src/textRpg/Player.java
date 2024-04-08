@@ -2,7 +2,6 @@ package textRpg;
 
 public class Player extends Unit {
 	
-	public static int money;
 	public static Guild guild = Guild.getInstance();
 	public static Inventory inven = Inventory.getInstance();
 	
@@ -10,10 +9,6 @@ public class Player extends Unit {
 	
 	public Player(String name, int level, int maxHp, int power, int def, int exp) {
 		super(name, level, maxHp, power, def, exp);
-	}
-
-	public void init() {
-		money = 1000;
 	}
 	
 	@Override
