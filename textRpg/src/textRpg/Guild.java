@@ -274,4 +274,15 @@ public class Guild {
 		Player player = guildList.get(index);
 		return player;
 	}
+	
+	public Player findPlayerByName(String name) {
+		Player player = null;
+		
+		for(int i=0; i<guildList.size(); i++) {
+			if(name.equals(guildList.get(i).getName()))
+				player = guildList.get(i);
+		}
+		
+		return player;
+	}
 }
