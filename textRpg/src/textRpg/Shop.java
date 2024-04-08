@@ -23,7 +23,7 @@ public class Shop {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 			int sel = GameManager.scan.nextInt();
 			if(sel == Item.WEAPON) {
-				
+				 printItemAll(sel);
 			}
 			else if(sel == Item.ARMOR) {
 				
@@ -171,5 +171,24 @@ public class Shop {
 	    }
 		
 		return price;
+	}
+	
+	private void printItemAll(int sel) {
+		if(sel == Item.WEAPON)
+			System.out.println("~~~~~~~~~~~~~ [⚔️무기⚔️] ~~~~~~~~~~~~~\n");
+		else if(sel == Item.ARMOR)
+			System.out.println("~~~~~~~~~~~~~ [🥼갑옷🥼] ~~~~~~~~~~~~~\n");
+		else if(sel == Item.RING)
+			System.out.println("~~~~~~~~~~~~~ [💍장신구💍] ~~~~~~~~~~~~\n");
+		else if(sel == Item.POTION)
+			System.out.println("~~~~~~~~~~~~~ [🧪포션🧪] ~~~~~~~~~~~~~\n");
+		for(int i=0; i<itemList.size(); i++) {
+			Item item = itemList.get(i);
+			if(sel == item.getKind()) {
+				System.out.printf("[%d] ", i+1);
+				System.out.println(item);
+			}
+		}
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	}
 }
