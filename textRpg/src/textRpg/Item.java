@@ -35,11 +35,6 @@ public class Item {
 
 	@Override
 	public String toString() {
-		String info = "";
-		info += "~~~~~~~~~~~~~ [" + name + "] ~~~~~~~~~~~~~\n";
-		info += "\n             [Power    :  " + power + "]\n";
-		info += "             [Price    :  " + price + "]\n";
-		info += "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-		return info;
+		return String.format("%s    power : %d    %d원\n", name, power, price);
 	}
 }
