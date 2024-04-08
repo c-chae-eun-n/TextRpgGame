@@ -4,7 +4,7 @@ public class Player extends Unit {
 	
 	public static int money;
 	public static Guild guild = Guild.getInstance();
-	public static Inventory inven = new Inventory();
+	public static Inventory inven = Inventory.getInstance();
 	
 	public Player() {}
 	
