@@ -174,22 +174,22 @@ public class Unit {
 		if(weapon == null) {
 			System.out.println("           [⚔️무기⚔️  : 없음]");
 		} else {
-			
+			System.out.println("           [⚔️무기⚔️  : "+weapon.getName()+"]");
 		}
 		if(armor == null) {
 			System.out.println("           [🛡️방어구🛡️ : 없음]");
 		} else {
-			
+			System.out.println("           [🛡️방어구🛡️  : "+armor.getName()+"]");
 		}
 		if(ring == null) {
 			System.out.println("           [💍반지💍  : 없음]");
 		} else {
-			
+			System.out.println("           [💍반지💍  : "+ring.getName()+"]");
 		}
 		if(potion == 0) {
 			System.out.println("           [🧪물약🧪  : 없음]");
 		} else {
-			
+			System.out.println("           [🧪물약🧪  : "+potion+"개]");
 		}
 		System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	}
