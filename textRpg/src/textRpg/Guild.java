@@ -40,7 +40,8 @@ public class Guild {
 			System.out.println("~~~~~~~~~~~~~ [⚜️길드⚜️] ~~~~~~~~~~~~~~\n");
 			System.out.println(" [1]길드목록📃 [2]길드원모집🚨 [3]길드원삭제🗑️\n");
 			System.out.println(" [4]길드원정렬📊 [0]뒤로가기🔙\n");
-			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			System.out.print(" 메뉴 번호 입력 : ");
 			
 			int sel = GameManager.scan.nextInt();
 			if(sel == LIST) {
@@ -139,7 +140,8 @@ public class Guild {
 		System.out.println("~~~~~~~~~~~~~ [🔄️정렬🔄️] ~~~~~~~~~~~~~~\n");
 		System.out.println(" [1]이름        [2]레벨       [3]체력\n");
 		System.out.println(" [4]방어력      [5]공격력      [0]뒤로가기\n");
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.print(" 🔄️정렬🔄️ 하고 싶은 번호 입력 : ");
 	}
 	
 	private void sortGuild() {
