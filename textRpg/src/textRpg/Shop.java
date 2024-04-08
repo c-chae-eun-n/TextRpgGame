@@ -42,10 +42,6 @@ public class Shop {
 				 int size = printItemAll(sel);
 				 buyItem(sel, size);
 			}
-			else if(sel == Item.POTION) {
-				 int size = printItemAll(sel);
-				 buyItem(sel, size);
-			}
 			else if(sel == Item.ADMIN) {
 				setItem();
 			}
@@ -70,9 +66,6 @@ public class Shop {
 			}
 			else if(sel == Item.RING) {
 				setRing();	
-			}
-			else if(sel == Item.POTION) {
-				setPotion();
 			}
 			else if(sel == 0) {
 				break;
@@ -113,18 +106,6 @@ public class Shop {
 		int price = setPrice();
 		
 		item = new Ring(name, power, price);
-		itemList.add(item);
-		System.out.println(" " + item.getName() + " 📦아이템📦이 추가되었습니다.\n" + GameManager.exit);
-	}
-	
-	private void setPotion() {
-		Item item = null;
-		
-		String name = setName();
-		int power = setPower();
-		int price = setPrice();
-		
-		item = new Potion(name, power, price);
 		itemList.add(item);
 		System.out.println(" " + item.getName() + " 📦아이템📦이 추가되었습니다.\n" + GameManager.exit);
 	}
@@ -192,12 +173,12 @@ public class Shop {
 			System.out.println("~~~~~~~~~~~~~ [🥼갑옷🥼] ~~~~~~~~~~~~~\n");
 		else if(sel == Item.RING)
 			System.out.println("~~~~~~~~~~~~~ [💍장신구💍] ~~~~~~~~~~~~\n");
-		else if(sel == Item.POTION)
-			System.out.println("~~~~~~~~~~~~~ [🧪포션🧪] ~~~~~~~~~~~~~\n");
+		
+		int index = 1;
 		for(int i=0; i<itemList.size(); i++) {
 			Item item = itemList.get(i);
 			if(sel == item.getKind()) {
-				System.out.printf(" [%d] ", i+1);
+				System.out.printf(" [%d] ", index++);
 				System.out.println(item);
 				size ++;
 			}
