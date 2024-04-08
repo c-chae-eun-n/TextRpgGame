@@ -19,7 +19,7 @@ public class Shop {
 	public void shopMenu() {
 		System.out.print(" 📦아이템📦 구매 할 플레이어의 이름 입력 : ");
 		String name = GameManager.scan.next();
-		player = findPlayerByName(name);
+		player = Player.guild.findPlayerByName(name);
 		if(player == null) {
 			System.err.println("존재하지 않는 플레이어입니다.");
 			return;
@@ -241,16 +241,6 @@ public class Shop {
 		}
 		
 		return number;
-	}
-	
-	private Player findPlayerByName(String name) {
-		Player player = null;
-		for(int i=0; i<Player.guild.guildListSize(); i++) {
-			if(name.equals(Player.guild.getGuildList(i).getName())) 
-				player = Player.guild.getGuildList(i);
-		}
-		
-		return player;
 	}
 	
 	private Item findItemByNumber(int sel, int number) {
