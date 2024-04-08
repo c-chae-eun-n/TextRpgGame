@@ -25,7 +25,7 @@ public class Shop {
 			if(sel == Item.WEAPON) {
 				
 			}
-			else if(sel == Item.AMOR) {
+			else if(sel == Item.ARMOR) {
 				
 			}
 			else if(sel == Item.RING) {
@@ -53,14 +53,14 @@ public class Shop {
 			if(sel == Item.WEAPON) {
 				setWeapon();
 			}
-			else if(sel == Item.AMOR) {
-				
+			else if(sel == Item.ARMOR) {
+				setArmor();
 			}
 			else if(sel == Item.RING) {
-				
+				setRing();	
 			}
 			else if(sel == Item.POTION) {
-				
+				setPotion();
 			}
 			else if(sel == 0) {
 				break;
@@ -76,6 +76,42 @@ public class Shop {
 	    int price = setPrice();
 		
 		item = new Weapon(name, power, price);
+		itemList.add(item);
+		System.out.println(" " + item.getName() + " 아이템이 추가되었습니다.\n" + GameManager.exit);
+	}
+	
+	private void setArmor() {
+		Item item = null;
+		
+		String name = setName();
+		int power = setPower();
+		int price = setPrice();
+		
+		item = new Armor(name, power, price);
+		itemList.add(item);
+		System.out.println(" " + item.getName() + " 아이템이 추가되었습니다.\n" + GameManager.exit);
+	}
+	
+	private void setRing() {
+		Item item = null;
+		
+		String name = setName();
+		int power = setPower();
+		int price = setPrice();
+		
+		item = new Ring(name, power, price);
+		itemList.add(item);
+		System.out.println(" " + item.getName() + " 아이템이 추가되었습니다.\n" + GameManager.exit);
+	}
+	
+	private void setPotion() {
+		Item item = null;
+		
+		String name = setName();
+		int power = setPower();
+		int price = setPrice();
+		
+		item = new Potion(name, power, price);
 		itemList.add(item);
 		System.out.println(" " + item.getName() + " 아이템이 추가되었습니다.\n" + GameManager.exit);
 	}
