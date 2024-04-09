@@ -203,9 +203,9 @@ public class Unit {
 			System.out.println("           [💍반지💍  : "+ring.getName()+"]");
 		}
 		if(potion == 0) {
-			System.out.println("           [🧪물약🧪  : 없음]");
+			System.out.println("           [🧪포션🧪  : 없음]");
 		} else {
-			System.out.println("           [🧪물약🧪  : "+potion+"개]");
+			System.out.println("           [🧪포션🧪  : "+potion+"개]");
 		}
 		System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	}
@@ -216,6 +216,15 @@ public class Unit {
 		if(target.getHp() <= 0) {
 			System.err.println("       [" + target.getName() + "]을(를) 처치했습니다.\n");
 			target.setHp(0);
+			getRandomPotion();
+		}
+	}
+	
+	private void getRandomPotion() {
+		int rNum = GameManager.random.nextInt(4);
+		if(rNum != 0) {
+			setPotion(getPotion() + rNum);
+			System.out.printf("       [%s] 🧪포션🧪 %d개 획득!\n\n", name, potion);
 		}
 	}
 	
