@@ -89,7 +89,6 @@ public class StageBattle extends Stage {
 		System.out.println("~~~~~~~~~~~ [🗡️공격 선택🗡️] ~~~~~~~~~~~~");
 		System.out.printf("    [%s (%s)] [1]일반공격 [2]스킬\n", p.getName(), p.getKind()==1 ? "전사" : (p.getKind()==2 ? "마법사" : "힐러"));
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.print(" 🗡️공격🗡️ 방법 번호 입력 : ");
 	}
 	
 	private void checkLive() {
