@@ -4,20 +4,12 @@ import java.util.ArrayList;
 
 public class Inventory {
 	private ArrayList<Item> invenList;
-	private Player player;
 	
 	public Inventory() {
 		invenList = new ArrayList<>();
 	}
 	
 	public void inventoryMenu() {
-		System.out.print(" 🎒인벤토리🎒 사용 할 플레이어의 이름 입력 : ");
-		String name = GameManager.scan.next();
-		player = Player.guild.findPlayerByName(name);
-		if(player == null) {
-			System.err.println("존재하지 않는 플레이어입니다.");
-			return;
-		}
 		while(true) {
 			System.out.println("~~~~~~~~~~~~ [🎒인벤토리🎒] ~~~~~~~~~~~~\n");
 			System.out.println(" [1]착용🪞 [2] 제거🚫 [3]판매💰 [0]뒤로가기🔙\n");
@@ -46,7 +38,7 @@ public class Inventory {
 	
 	private void wearEquip() {
 		while(true) {
-			player.printItem();
+			StageSetting.player.printItem();
 			System.out.println(" [1]무기⚔️ [2]갑옷🥼 [3]장신구💍 [0]뒤로가기🔙\n");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			System.out.println(" 착용할 🛠️장비🛠️ 번호 입력 : ");
@@ -63,7 +55,7 @@ public class Inventory {
 	
 	private void removeEquip() {
 		while(true) {
-			player.printItem();
+			StageSetting.player.printItem();
 			System.out.println(" [1]무기⚔️ [2]갑옷🥼 [3]장신구💍 [0]뒤로가기🔙\n");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			System.out.println(" 제거할 🛠️장비🛠️ 번호 입력 : ");
@@ -95,7 +87,7 @@ public class Inventory {
 				size ++;
 			}
 		}
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+		System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		
 		return size;
 	}
@@ -116,41 +108,41 @@ public class Inventory {
 		
 		Item item = findItemByNumber(sel, num);
 		if(sel == Item.WEAPON) {
-			player.setWeapon(item);
+			StageSetting.player.setWeapon(item);
 		}
 		else if(sel == Item.ARMOR) {
-			player.setArmor(item);
+			StageSetting.player.setArmor(item);
 		}
 		else if(sel == Item.RING) {
-			player.setRing(item);
+			StageSetting.player.setRing(item);
 		}
-		player.setPower(player.getPower() + item.getPower());
+		StageSetting.player.setPower(StageSetting.player.getPower() + item.getPower());
 		System.out.println(" " + item.getName() + " 📦아이템📦을 착용하였습니다.");
 		System.out.printf(" 파워가 %d 증가하였습니다.\n\n", item.getPower());
 	}
 	
 	private void removeItem(int sel) {
-		if(sel == Item.WEAPON && player.getWeapon() == null) {
+		if(sel == Item.WEAPON && StageSetting.player.getWeapon() == null) {
 			System.err.println("\t착용중인 📦아이템📦이 없습니다.\n");
 			return;
-		}else if(sel == Item.WEAPON && player.getWeapon() != null) {
-			player.setWeapon(null);
+		}else if(sel == Item.WEAPON && StageSetting.player.getWeapon() != null) {
+			StageSetting.player.setWeapon(null);
 			System.out.println(" 📦아이템📦을 제거하였습니다.");
 		}
 		
-		else if(sel == Item.ARMOR && player.getArmor() == null) {
+		else if(sel == Item.ARMOR && StageSetting.player.getArmor() == null) {
 			System.err.println("\t착용중인 📦아이템📦이 없습니다.\n");
 			return;
-		}else if(sel == Item.ARMOR && player.getArmor() != null) {
-			player.setArmor(null);
+		}else if(sel == Item.ARMOR && StageSetting.player.getArmor() != null) {
+			StageSetting.player.setArmor(null);
 			System.out.println(" 📦아이템📦을 제거하였습니다.");
 		}
 		
-		else if(sel == Item.RING && player.getRing() == null) {
+		else if(sel == Item.RING && StageSetting.player.getRing() == null) {
 			System.err.println("\t착용중인 📦아이템📦이 없습니다.\n");
 			return;
-		}else if(sel == Item.RING && player.getRing() != null) {
-			player.setRing(null);
+		}else if(sel == Item.RING && StageSetting.player.getRing() != null) {
+			StageSetting.player.setRing(null);
 			System.out.println(" 📦아이템📦을 제거하였습니다.");
 		}
 	}
