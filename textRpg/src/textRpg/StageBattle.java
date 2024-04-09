@@ -127,15 +127,8 @@ public class StageBattle extends Stage {
 					m.attack(Player.guild.getGuildList(idx));
 					break;
 				} else {
-					if(m instanceof MonsterBat) {
-						m.skill(Player.guild.getGuildList(idx));
-					}
-					else if(m instanceof MonsterGhost) {
-						m.skill(Player.guild.getGuildList(idx));
-					}
-					else if(m instanceof MonsterAlien) {
-						m.skill(Player.guild.getGuildList(idx));
-					}
+					m.skill(Player.guild.getGuildList(idx));
+					break;
 				}
 			}
 		}
