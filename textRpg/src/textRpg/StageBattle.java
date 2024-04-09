@@ -105,7 +105,8 @@ public class StageBattle extends Stage {
 	
 	private void printPlayerAttackMenu(Player p) {
 		System.out.println("~~~~~~~~~~~ [🗡️공격 선택🗡️] ~~~~~~~~~~~~");
-		System.out.printf("    [%s (%s)] [1]일반공격 [2]스킬\n", p.getName(), p.getKind()==1 ? "전사" : (p.getKind()==2 ? "마법사" : "힐러"));
+		System.out.printf(" [%s(%s)] [1]공격 [2]스킬 [3]회복(%d개)\n", p.getName(),
+				p.getKind()==1 ? "전사" : (p.getKind()==2 ? "마법사" : "힐러"), p.getPotion());
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	}
 	
@@ -116,8 +117,21 @@ public class StageBattle extends Stage {
 		while(true) {
 			int idx = GameManager.random.nextInt(playerSize);
 			if(Player.guild.getGuildList(idx).getHp() > 0) {
-				m.attack(Player.guild.getGuildList(idx));
-				break;
+				int rNum = GameManager.random.nextInt(3);
+				if(rNum != 0) {
+					m.attack(Player.guild.getGuildList(idx));
+					break;
+				} else {
+					if(m instanceof MonsterBat) {
+						m.skill(Player.guild.getGuildList(idx));
+					}
+					else if(m instanceof MonsterGhost) {
+						m.skill(Player.guild.getGuildList(idx));
+					}
+					else if(m instanceof MonsterAlien) {
+						m.skill(Player.guild.getGuildList(idx));
+					}
+				}
 			}
 		}
 	}
