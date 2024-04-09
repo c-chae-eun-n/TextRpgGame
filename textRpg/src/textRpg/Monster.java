@@ -68,7 +68,7 @@ public abstract class Monster {
 		}
 	}
 	
-	public abstract void skill();
+	public abstract void skill(Player target);
 	
 	@Override
 	public String toString() {
