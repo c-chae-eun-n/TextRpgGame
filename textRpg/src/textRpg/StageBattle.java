@@ -41,4 +41,22 @@ public class StageBattle extends Stage {
 			System.out.println(monsterList.get(i));
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	}
+	
+	private void checkLive() {
+		int num = 0;
+		for (int i=0; i<Player.guild.guildListSize(); i++) {
+			if (Player.guild.getGuildList(i).getHp() <= 0) {
+				num += 1;
+			}
+		}
+		playerDead = Player.guild.guildListSize() - num;
+		num = 0;
+		for (int i=0; i<monsterList.size(); i++) {
+			if (monsterList.get(i).getHp() <= 0) {
+				num += 1;
+			}
+		}
+		monsterDead = monsterList.size() - num;
+
+	}
 }
