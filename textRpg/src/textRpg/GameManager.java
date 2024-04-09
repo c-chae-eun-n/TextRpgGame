@@ -9,7 +9,8 @@ public class GameManager {
 	public static Scanner scan = new Scanner(System.in);
 	public static Random random = new Random();
 	
-    public static final String red = "\u001B[31m" ;
+	public static final String red = "\u001B[31m" ;
+    public static final String yellow = "\u001B[33m" ;
     public static final String exit = "\u001B[0m" ;
     
     public static final String name = "김철수";
