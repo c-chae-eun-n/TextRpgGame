@@ -8,7 +8,7 @@ public class UnitManager {
 	private Vector<Monster> monsterList;
 	
 	private String path = "textRpg.";
-	private String monsters[] = {"MonsterGhost","MonsterWolf","MonsterBat"};
+	private String monsters[] = {"MonsterGhost","MonsterAlien","MonsterBat"};
 
 	private UnitManager() {
 		playerList = new Vector<>();
