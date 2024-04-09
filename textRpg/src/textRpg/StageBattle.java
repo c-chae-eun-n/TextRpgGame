@@ -84,6 +84,11 @@ public class StageBattle extends Stage {
 			return;
 		
 		printStatus();
+		if(p.isStun()) {
+			System.out.println(GameManager.yellow + "   ["+p.getName()+"] 💫스턴💫에 걸려서 공격 불가!!\n" + GameManager.exit);
+			p.setStun(false);
+			return;
+		}
 		int sel = 0;
 		while(sel != 1 && sel != 2 && sel != 3) {
 			printPlayerAttackMenu(p);
@@ -122,7 +127,7 @@ public class StageBattle extends Stage {
 		while(true) {
 			int idx = GameManager.random.nextInt(playerSize);
 			if(Player.guild.getGuildList(idx).getHp() > 0) {
-				int rNum = GameManager.random.nextInt(3);
+				int rNum = GameManager.random.nextInt(5);
 				if(rNum != 0) {
 					m.attack(Player.guild.getGuildList(idx));
 					break;
