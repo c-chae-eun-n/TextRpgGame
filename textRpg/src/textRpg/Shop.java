@@ -64,7 +64,6 @@ public class Shop {
 			else if(sel == 0) {
 				break;
 			}
-			printAll();
 		}
 	}
 	
