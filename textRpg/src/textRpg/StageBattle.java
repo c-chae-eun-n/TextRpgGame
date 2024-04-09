@@ -20,13 +20,17 @@ public class StageBattle extends Stage {
 		
 		while(true) {
 			if(turn) {
-				printStatus();
+				try {
+					Thread.sleep(600);
+				} catch (Exception e) {
+				}
 				if(pIndex < playerSize) {
 					playerAttack(pIndex);
 					pIndex ++;
 				} else {
 					turn = !turn;
 					pIndex = 0;
+					printStatus();
 				}
 			}else if(!turn) {
 				if(mIndex < monsterList.size()) {
@@ -38,8 +42,15 @@ public class StageBattle extends Stage {
 				}
 			}
 			checkLive();
-			if(monsterDead <= 0 || playerDead <= 0)
+			if(monsterDead <= 0)
 				break;
+			else if(playerDead <= 0) {
+				for(int i=0; i<playerSize; i++) {
+					Player player = Player.guild.getGuildList(i);
+					player.setHp(player.getMaxHp());
+				}
+				break;
+			}
 		}
 		GameManager.nextStage = "LOBBY";
 		return false;
@@ -72,6 +83,7 @@ public class StageBattle extends Stage {
 		if(p.getHp() <= 0)
 			return;
 		
+		printStatus();
 		printPlayerAttackMenu(p);
 		int sel = 0;
 		while(sel != 1 && sel != 2) {
