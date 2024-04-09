@@ -29,7 +29,7 @@ public class GameManager {
 	    int power = rNum + rNum2;
 	    rNum2 = random.nextInt(20)+30;
 	    int def = rNum + rNum2;
-		Player player = new Player(name, 1, hp, power, def, 0);
+		Player player = new Player(name, Unit.WARRIOR, 1, hp, power, def, 0);
 		unitManager.create(player);
 		guild.setGuild(player);
 	}
