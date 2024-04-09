@@ -7,8 +7,8 @@ public class Player extends Unit {
 	
 	public Player() {}
 	
-	public Player(String name, int level, int maxHp, int power, int def, int exp) {
-		super(name, level, maxHp, power, def, exp);
+	public Player(String name, int kind, int level, int maxHp, int power, int def, int exp) {
+		super(name, kind, level, maxHp, power, def, exp);
 		inven = new Inventory();
 	}
 	
