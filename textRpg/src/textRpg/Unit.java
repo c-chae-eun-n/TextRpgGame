@@ -214,10 +214,6 @@ public class Unit {
 		
 	}
 	
-	public void skill(Monster target) {
-		
-	}
-	
 	@Override
 	public String toString() {
 		String info = "";
