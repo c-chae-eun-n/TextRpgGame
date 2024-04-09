@@ -6,7 +6,7 @@ public class MonsterAlien extends Monster {
 	}
 
 	@Override
-	public void skill() {
+	public void skill(Player target) {
 		
 	}
 
