@@ -228,6 +228,17 @@ public class Unit {
 		}
 	}
 	
+	public void healHp() {
+		if(getPotion() == 0) {
+			System.err.println("       🧪포션🧪 부족!! 회복 불가!!\n");
+			return;
+		}
+		int rNum = GameManager.random.nextInt(50)+30;
+		setHp(getHp()+rNum);
+		setPotion(getPotion()-1);
+		System.out.printf("       [%s] 🧪HP🧪 %d 회복!\n\n", name, rNum);
+	}
+	
 	@Override
 	public String toString() {
 		String info = "";
