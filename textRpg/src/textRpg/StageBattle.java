@@ -22,9 +22,12 @@ public class StageBattle extends Stage {
 		while(true) {
 			if(turn) {
 				printStatus();
-//				int n = GameManager.scan.nextInt();
 				if(pIndex < playerSize) {
+					playerAttack(pIndex);
 					pIndex ++;
+				} else {
+					turn = !turn;
+					pIndex = 0;
 				}
 			}else if(!turn) {
 				
@@ -55,6 +58,38 @@ public class StageBattle extends Stage {
 		for(int i=0; i<monsterList.size(); i++) 
 			System.out.println("      "+monsterList.get(i));
 		System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+	}
+	
+	private void playerAttack(int index) {
+		Player p = Player.guild.getGuildList(index);
+		
+		if(p.getHp() <= 0)
+			return;
+		
+		printPlayerAttackMenu(p);
+		int sel = 0;
+		while(sel != 1 && sel != 2) {
+			sel = GameManager.scan.nextInt();
+		}
+		if(sel == 1) {
+			while(true) {
+				int idx = GameManager.random.nextInt(monsterList.size());
+				if(monsterList.get(idx).getHp() > 0) {
+					p.attack(monsterList.get(idx));
+					break;
+				}
+			}
+		}
+		else if(sel == 2) {
+			
+		}
+	}
+	
+	private void printPlayerAttackMenu(Player p) {
+		System.out.println("~~~~~~~~~~~ [🗡️공격 선택🗡️] ~~~~~~~~~~~~");
+		System.out.printf("    [%s (%s)] [1]일반공격 [2]스킬\n", p.getName(), p.getKind()==1 ? "전사" : (p.getKind()==2 ? "마법사" : "힐러"));
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.print(" 🗡️공격🗡️ 방법 번호 입력 : ");
 	}
 	
 	private void checkLive() {
