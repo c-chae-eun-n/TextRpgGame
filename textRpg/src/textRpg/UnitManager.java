@@ -42,4 +42,8 @@ public class UnitManager {
 			}
 		}
 	}
+	
+	public void clearMonsterList() {
+		monsterList.clear();
+	}
 }
