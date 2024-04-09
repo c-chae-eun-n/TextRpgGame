@@ -25,7 +25,7 @@ public class GameManager {
 	private GameManager() {
 	    int rNum = random.nextInt(6)+5;
 	    int rNum2 = random.nextInt(20)+30;
-	    int hp = rNum * 11;
+	    int hp = rNum * 113;
 	    int power = rNum + rNum2;
 	    rNum2 = random.nextInt(20)+30;
 	    int def = rNum + rNum2;
