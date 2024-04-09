@@ -4,8 +4,6 @@ import java.util.Vector;
 
 public class UnitManager {
 	
-	public Player player = new Player();
-	
 	private Vector<Player> playerList;
 	private Vector<Monster> monsterList;
 	
