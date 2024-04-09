@@ -84,25 +84,27 @@ public class StageBattle extends Stage {
 			return;
 		
 		printStatus();
-		printPlayerAttackMenu(p);
 		int sel = 0;
 		while(sel != 1 && sel != 2 && sel != 3) {
+			printPlayerAttackMenu(p);
 			sel = GameManager.scan.nextInt();
-		}
-		if(sel == 1) {
-			while(true) {
-				int idx = GameManager.random.nextInt(monsterList.size());
-				if(monsterList.get(idx).getHp() > 0) {
-					p.attack(monsterList.get(idx));
-					break;
+			if(sel == 1) {
+				while(true) {
+					int idx = GameManager.random.nextInt(monsterList.size());
+					if(monsterList.get(idx).getHp() > 0) {
+						p.attack(monsterList.get(idx));
+						break;
+					}
 				}
 			}
-		}
-		else if(sel == 2) {
-			
-		}
-		else if(sel == 3) {
-			
+			else if(sel == 2) {
+				
+			}
+			else if(sel == 3) {
+				p.healHp();
+				sel = 0;
+				continue;
+			}
 		}
 	}
 	
