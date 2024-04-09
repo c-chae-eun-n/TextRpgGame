@@ -1,18 +1,18 @@
 package textRpg;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class UnitManager {
 	
-	private Vector<Player> playerList;
-	private Vector<Monster> monsterList;
+	private ArrayList<Player> playerList;
+	private ArrayList<Monster> monsterList;
 	
 	private String path = "textRpg.";
 	private String monsters[] = {"MonsterGhost","MonsterAlien","MonsterBat"};
 
 	private UnitManager() {
-		playerList = new Vector<>();
-		monsterList = new Vector<>();
+		playerList = new ArrayList<>();
+		monsterList = new ArrayList<>();
 	}
 	
 	private static UnitManager instance = new UnitManager();
