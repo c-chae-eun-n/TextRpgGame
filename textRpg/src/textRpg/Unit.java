@@ -1,8 +1,12 @@
 package textRpg;
 
 public class Unit {
+	public static final int WARRIOR = 1;
+	public static final int WIZARD = 2;
+	public static final int HEALER = 3;
+	
 	private String name;
-	private int level, hp, maxHp, power, def, maxExp, exp, potion, money;
+	private int kind, level, hp, maxHp, power, def, maxExp, exp, potion, money;
 	private boolean isStun, isShield;
 	private boolean party;
 	private Item weapon, armor, ring;
@@ -11,8 +15,9 @@ public class Unit {
 		
 	}
 	
-	public Unit(String name, int level, int hp, int power, int def, int exp) {
+	public Unit(String name, int kind ,int level, int hp, int power, int def, int exp) {
 		this.name = name;
+		this.kind = kind;
 		this.level = level;
 		this.maxHp = hp;
 		this.hp = hp;
@@ -34,6 +39,10 @@ public class Unit {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public int getKind() {
+		return kind;
 	}
 
 	public int getLevel() {
@@ -153,7 +162,14 @@ public class Unit {
 	}
 	
 	public void printStatus() {
-		System.out.printf("     [%s][lv.%d]   (Party : %b)\n", name, level, party);
+		String info = "";
+		if(kind == WARRIOR)
+			info = "전사";
+		else if(kind == WIZARD)
+			info = "마법사";
+		else if(kind == HEALER)
+			info = "힐러";
+		System.out.printf("  [%s(%s)][lv.%d] (Party : %b)\n", name, info, level, party);
 		System.out.println();
 		System.out.printf("            [HP    :  %d]\n", hp);
 		System.out.printf("            [DEF   :  %d]\n", def);
@@ -204,6 +220,13 @@ public class Unit {
 	
 	@Override
 	public String toString() {
-		return String.format("[%s] [%d/%d][%d]", name, hp, maxHp, power);
+		String info = "";
+		if(kind == WARRIOR)
+			info = "전사";
+		else if(kind == WIZARD)
+			info = "마법사";
+		else if(kind == HEALER)
+			info = "힐러";
+		return String.format("[%s (%s)] [%d/%d][%d]", name, info, hp, maxHp, power);
 	}
 }
