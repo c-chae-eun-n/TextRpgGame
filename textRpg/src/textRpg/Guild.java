@@ -103,7 +103,7 @@ public class Guild {
 	    int kind = GameManager.random.nextInt(3)+1;
 	    int rNum = GameManager.random.nextInt(6)+5;
 	    int rNum2 = GameManager.random.nextInt(20)+30;
-	    int hp = rNum * 11;
+	    int hp = rNum * 113;
 	    int power = rNum + rNum2;
 	    rNum2 = GameManager.random.nextInt(20)+30;
 	    int def = rNum + rNum2;
