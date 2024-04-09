@@ -12,10 +12,8 @@ public class Player extends Unit {
 		inven = new Inventory();
 	}
 	
-	@Override
-	public void skill(Monster target) {
-		// TODO Auto-generated method stub
-		super.skill(target);
+	public void skill(Player p, Monster target) {
+		
 	}
 	
 	public void guildMenu() {
