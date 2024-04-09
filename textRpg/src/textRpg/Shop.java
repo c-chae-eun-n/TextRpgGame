@@ -46,7 +46,7 @@ public class Shop {
 	
 	private void setItem() {
 		while(true) {
-			System.out.println(GameManager.red + "~~~~~~~~~~~~~ [⛔관리자⛔] ~~~~~~~~~~~~\n");
+			System.out.println(GameManager.yellow + "~~~~~~~~~~~~~ [⛔관리자⛔] ~~~~~~~~~~~~\n");
 			System.out.println(" [1]무기⚔️      [2]갑옷🥼     [3]장신구💍\n");
 			System.out.println(" [0]뒤로가기🔙\n");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -117,7 +117,7 @@ public class Shop {
 	private String setName() {
 		String name = "";
 
-		System.out.print(GameManager.red + " 📦아이템📦 이름 : ");
+		System.out.print(GameManager.yellow + " 📦아이템📦 이름 : ");
 		while(true) {
 			name = GameManager.scan.next();
 			if(isValid(name)) {
