@@ -19,7 +19,7 @@ public class Shop {
 		while(true) {
 			System.out.println("~~~~~~~~~~~~~ [🛒상점🛒] ~~~~~~~~~~~~~\n");
 			System.out.println(" [1]무기⚔️     [2]갑옷🥼     [3]장신구💍\n");
-			System.out.println(" [5]관리자⛔   [0]뒤로가기🔙\n");
+			System.out.println(" [4]관리자⛔   [0]뒤로가기🔙\n");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 			System.out.print(" 메뉴 번호 입력 : ");
 			int sel = GameManager.scan.nextInt();
