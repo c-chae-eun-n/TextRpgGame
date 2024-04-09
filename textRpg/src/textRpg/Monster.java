@@ -3,6 +3,7 @@ package textRpg;
 public abstract class Monster {
 	private int hp, maxHp, power;
 	private String name;
+	private boolean isStun;
 	
 	public Monster() {
 		
@@ -41,6 +42,14 @@ public abstract class Monster {
 	
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public boolean isStun() {
+		return isStun;
+	}
+
+	public void setStun(boolean isStun) {
+		this.isStun = isStun;
 	}
 	
 	public void init(int maxHp, int power) {
