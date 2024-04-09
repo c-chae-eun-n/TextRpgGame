@@ -99,7 +99,8 @@ public class Guild {
 	    		break;
 	    	}
 	    }
-	    
+
+	    int kind = GameManager.random.nextInt(3)+1;
 	    int rNum = GameManager.random.nextInt(6)+5;
 	    int rNum2 = GameManager.random.nextInt(20)+30;
 	    int hp = rNum * 11;
@@ -108,7 +109,7 @@ public class Guild {
 	    int def = rNum + rNum2;
 	    int level = rNum;
 	    int exp = rNum * 9;
-	    Player player = new Player(name, level, hp, power, def, exp);
+	    Player player = new Player(name, kind, level, hp, power, def, exp);
 
 		System.out.println("~~~~~~~~~~~~~ [⚜️길드원⚜️] ~~~~~~~~~~~~\n");
 		player.printStatus();
