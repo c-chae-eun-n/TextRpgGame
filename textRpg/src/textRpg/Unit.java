@@ -159,9 +159,9 @@ public class Unit {
 		System.out.printf("            [DEF   :  %d]\n", def);
 		System.out.printf("            [POWER :  %d]\n", power);
 		System.out.println();
-		if(maxExp/exp < 2) {
+		if(exp != 0 && maxExp/exp < 2) {
 			System.out.printf("       (%d/%d ■■■■■■■■■■■■  )\n", exp, maxExp);
-		}else if(maxExp/exp < 3) {
+		}else if(exp != 0 && maxExp/exp < 3) {
 			System.out.printf("       (%d/%d ■■■■■■■       )\n", exp, maxExp);
 		}else {
 			System.out.printf("       (%d/%d ■■■■          )\n", exp, maxExp);
