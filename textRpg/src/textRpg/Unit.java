@@ -205,7 +205,7 @@ public class Unit {
 		if(potion == 0) {
 			System.out.println("           [🧪포션🧪  : 없음]");
 		} else {
-			System.out.println("           [🧪포션🧪  : "+potion+"개]");
+			System.out.println("           [🧪포션🧪  : "+getPotion()+"개]");
 		}
 		System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	}
@@ -224,7 +224,7 @@ public class Unit {
 		int rNum = GameManager.random.nextInt(4);
 		if(rNum != 0) {
 			setPotion(getPotion() + rNum);
-			System.out.printf("       [%s] 🧪포션🧪 %d개 획득!\n\n", name, potion);
+			System.out.printf("       [%s] 🧪포션🧪 %d개 획득!\n\n", name, rNum);
 		}
 	}
 	
