@@ -1,8 +1,8 @@
 package textRpg;
 
-public class MonsterWolf extends Monster {
-	public MonsterWolf() {
-		setName("늑대🐺");
+public class MonsterAlien extends Monster {
+	public MonsterAlien() {
+		setName("에일리언👾");
 	}
 
 	@Override
