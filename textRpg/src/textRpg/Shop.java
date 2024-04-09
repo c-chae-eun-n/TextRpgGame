@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Shop {
 	private ArrayList<Item> itemList;
-	private Player player;
 	
 	private Shop() {
 		itemList = new ArrayList<>();
@@ -17,13 +16,6 @@ public class Shop {
 	}
 	
 	public void shopMenu() {
-		System.out.print(" 📦아이템📦 구매 할 플레이어의 이름 입력 : ");
-		String name = GameManager.scan.next();
-		player = Player.guild.findPlayerByName(name);
-		if(player == null) {
-			System.err.println("존재하지 않는 플레이어입니다.");
-			return;
-		}
 		while(true) {
 			System.out.println("~~~~~~~~~~~~~ [🛒상점🛒] ~~~~~~~~~~~~~\n");
 			System.out.println(" [1]무기⚔️     [2]갑옷🥼     [3]장신구💍\n");
@@ -204,12 +196,12 @@ public class Shop {
 		}
 		
 		Item item = findItemByNumber(sel, num);
-		if(player.getMoney()-item.getPrice() < 0) {
+		if(StageSetting.player.getMoney()-item.getPrice() < 0) {
 			System.err.println("\n 🪙골드🪙가 부족합니다.\n");
 			return;
 		}
-		player.setMoney(player.getMoney()-item.getPrice());
-		Player.inven.create(item);
+		StageSetting.player.setMoney(StageSetting.player.getMoney()-item.getPrice());
+		StageSetting.player.getInventory().create(item);
 	}
 	
 	private int inputNumber(String message) {
