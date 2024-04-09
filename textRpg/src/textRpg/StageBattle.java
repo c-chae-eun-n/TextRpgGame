@@ -14,14 +14,31 @@ public class StageBattle extends Stage {
 	
 	@Override
 	public boolean update() {
-		// TODO Auto-generated method stub
+		boolean run = true;
+		int pIndex = 0;
+		int mIndex = 0;
+		boolean turn = true;
+		
+		while(true) {
+			printStatus();
+			int n = GameManager.scan.nextInt();
+			if(monsterDead <= 0 || playerDead <= 0)
+				break;
+		}
 		return false;
 	}
 
 	@Override
-	public void init() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void init() {}
 
+	private void printStatus() {
+		System.out.printf("~~~~~~~~~ [⚔️%d VS %d BATTLE⚔️] ~~~~~~~\n\n", playerDead, monsterDead);
+		System.out.println("~~~~~~~~~~~~ [🧙‍♀️PLAYER🧙‍♀️] ~~~~~~~~~~~\n");
+		for(int i=0; i<Player.guild.guildListSize(); i++) 
+			System.out.println(Player.guild.getGuildList(i));
+		System.out.println("\n~~~~~~~~~~~~ [💀MONTER💀] ~~~~~~~~~~~\n");
+		for(int i=0; i<monsterList.size(); i++) 
+			System.out.println(monsterList.get(i));
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+	}
 }
