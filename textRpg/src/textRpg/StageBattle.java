@@ -14,7 +14,6 @@ public class StageBattle extends Stage {
 	
 	@Override
 	public boolean update() {
-		boolean run = true;
 		int pIndex = 0;
 		int mIndex = 0;
 		boolean turn = true;
@@ -30,12 +29,19 @@ public class StageBattle extends Stage {
 					pIndex = 0;
 				}
 			}else if(!turn) {
-				
+				if(mIndex < monsterList.size()) {
+					monsterAttack(mIndex);
+					mIndex ++;
+				} else {
+					turn = !turn;
+					mIndex = 0;
+				}
 			}
 			checkLive();
 			if(monsterDead <= 0 || playerDead <= 0)
 				break;
 		}
+		GameManager.nextStage = "LOBBY";
 		return false;
 	}
 
@@ -89,6 +95,19 @@ public class StageBattle extends Stage {
 		System.out.println("~~~~~~~~~~~ [🗡️공격 선택🗡️] ~~~~~~~~~~~~");
 		System.out.printf("    [%s (%s)] [1]일반공격 [2]스킬\n", p.getName(), p.getKind()==1 ? "전사" : (p.getKind()==2 ? "마법사" : "힐러"));
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	}
+	
+	private void monsterAttack(int index) {
+		Monster m = monsterList.get(index);
+		if(m.getHp() <= 0)
+			return;
+		while(true) {
+			int idx = GameManager.random.nextInt(playerSize);
+			if(Player.guild.getGuildList(idx).getHp() > 0) {
+				m.attack(Player.guild.getGuildList(idx));
+				break;
+			}
+		}
 	}
 	
 	private void checkLive() {
