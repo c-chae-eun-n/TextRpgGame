@@ -25,7 +25,7 @@ public class UnitManager {
 		playerList.add(player);
 	}
 	
-	public void monsterRandomSet(int size) {
+	public ArrayList<Monster> monsterRandomSet(int size) {
 		for(int i=0; i<size; i++) {
 			int rIdx = GameManager.random.nextInt(monsters.length);
 			try {
@@ -41,6 +41,8 @@ public class UnitManager {
 				e.printStackTrace();
 			}
 		}
+		
+		return monsterList;
 	}
 	
 	public void clearMonsterList() {
