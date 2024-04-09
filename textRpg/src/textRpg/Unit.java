@@ -214,7 +214,7 @@ public class Unit {
 		target.setHp(target.getHp()-power);
 		System.out.println("     [" + target.getName() + "]에게 " + power + " 데미지를 입혔다!\n");
 		if(target.getHp() <= 0) {
-			System.err.println(" [" + target.getName() + "]을(를) 처치했습니다.\n");
+			System.err.println("     [" + target.getName() + "]을(를) 처치했습니다.\n");
 			target.setHp(0);
 		}
 	}
