@@ -86,7 +86,7 @@ public class StageBattle extends Stage {
 		printStatus();
 		printPlayerAttackMenu(p);
 		int sel = 0;
-		while(sel != 1 && sel != 2) {
+		while(sel != 1 && sel != 2 && sel != 3) {
 			sel = GameManager.scan.nextInt();
 		}
 		if(sel == 1) {
@@ -99,6 +99,9 @@ public class StageBattle extends Stage {
 			}
 		}
 		else if(sel == 2) {
+			
+		}
+		else if(sel == 3) {
 			
 		}
 	}
