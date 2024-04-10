@@ -20,7 +20,7 @@ public class Player extends Unit {
 			wizardSkill(p, target);
 		}
 		else if(p.getKind() == Unit.HEALER) {
-			healerSkill(p, target);
+			healerSkill();
 		}
 	}
 	
@@ -60,7 +60,17 @@ public class Player extends Unit {
 		}
 	}
 	
-	private void healerSkill(Player p, Monster target) {
-		
+	private void healerSkill() {
+		System.out.println(GameManager.yellow + "     [" + getName() + "] 전 길드원 🧪HP🧪 회복!!\n" + GameManager.exit);
+		for(int i=0; i<Player.guild.guildListSize(); i++) {
+			int rNum = GameManager.random.nextInt(50)+30;
+			Player player = Player.guild.getGuildList(i);
+			if(player.getHp() == 0)
+				continue;
+			
+			player.setHp(player.getHp()+rNum);
+			if(player.getHp() >= player.getMaxHp())
+				player.setHp(player.getMaxHp());
+		}
 	}
 }
