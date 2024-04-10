@@ -49,7 +49,15 @@ public class Player extends Unit {
 	}
 	
 	private void wizardSkill(Player p, Monster target) {
-		
+		int rNum = GameManager.random.nextInt(2)+2;
+		System.out.println(GameManager.yellow + "     [" + getName() + "] " + rNum + "배 공격력 강화!!");
+		target.setHp(target.getHp()-getPower()*rNum);
+		System.out.println("     [" + target.getName() + "]에게 " + getPower()*rNum + " 데미지를 입혔다!\n" + GameManager.exit);
+		if(target.getHp() <= 0) {
+			System.out.println(GameManager.red + "       [" + target.getName() + "]을(를) 처치했습니다.\n" + GameManager.exit);
+			target.setHp(0);
+			p.getRandomPotion();
+		}
 	}
 	
 	private void healerSkill(Player p, Monster target) {
