@@ -8,8 +8,8 @@ public class StageSetting extends Stage {
 	private final int LOAD = 5;
 	private final int EXIT = 0;
 	
-//	private UnitManager unitManager = UnitManager.getInstance();
 	private Shop shop = Shop.getInstance();
+	private FileData fileData;
 	public static Player player = null;
 	private boolean isValid = true;
 
@@ -36,7 +36,11 @@ public class StageSetting extends Stage {
 					player.invenMenu();
 				}
 				else if(sel == SAVE) {
-					
+					try {
+						fileData.save();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 				else if(sel == LOAD) {
 					
