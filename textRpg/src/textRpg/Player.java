@@ -12,6 +12,10 @@ public class Player extends Unit {
 		inven = new Inventory();
 	}
 	
+	public Player(String name, int kind, int level, int hp, int maxHp, int power, int def, int maxExp, int exp, int potion, int money, boolean party, Item weapon, Item armor, Item ring) {
+		super(name, kind, level, hp, maxHp, power, def, maxExp, exp, potion, money, party, weapon, armor, ring);
+	}
+	
 	public void skill(Player p, Monster target) {
 		if(p.getKind() == Unit.WARRIOR) {
 			warriorSkill(p, target);
