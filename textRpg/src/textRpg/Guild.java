@@ -5,8 +5,9 @@ import java.util.Vector;
 public class Guild {
 	private final int LIST = 1;
 	private final int ADD = 2;
-	private final int DELETE = 3;
-	private final int SORT = 4;
+	private final int PARTY = 3;
+	private final int DELETE = 4;
+	private final int SORT = 5;
 	private final int EXIT = 0;
 	
 	private final int NAME = 1;
@@ -38,8 +39,8 @@ public class Guild {
 	public void guildMenu() {
 		while(true) {
 			System.out.println("~~~~~~~~~~~~~ [⚜️길드⚜️] ~~~~~~~~~~~~~~\n");
-			System.out.println(" [1]길드목록📃 [2]길드원모집🚨 [3]길드원삭제🗑️\n");
-			System.out.println(" [4]길드원정렬📊 [0]뒤로가기🔙\n");
+			System.out.println(" [1]길드목록📃 [2]길드원모집🚨 [3]파티원모집🚨\n");
+			System.out.println(" [4]길드원삭제🗑️ [5]길드원정렬📊 [0]뒤로가기🔙\n");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			System.out.print(" 메뉴 번호 입력 : ");
 			
@@ -49,6 +50,9 @@ public class Guild {
 			}
 			else if(sel == ADD) {
 				setGuild(recruitPlayer());
+			}
+			else if(sel == PARTY) {
+				recruitParty();
 			}
 			else if(sel == DELETE) {
 				deletePlayer();
@@ -77,6 +81,28 @@ public class Guild {
 	
 	private void printPlayerStatus(int sel) {
 		guildList.get(sel).printStatus();
+	}
+	
+	private void recruitParty() {
+		printNotParty();
+		System.out.print(" 원하는 파티원의 이름 입력 : ");
+		String name = GameManager.scan.next();
+		Player player = findPlayerByName(name);
+		if(player == null || player.isParty()) {
+			System.err.println(" 파티를 맺을 수 없는 플레이어 입니다.");
+			return;
+		}
+		player.setParty(true);
+		System.out.println(" %s님이 파티원으로 참가하였습니다.");
+	}
+	
+	private void printNotParty() {
+		for(int i=0; i<guildList.size(); i++) {
+			Player player = guildList.get(i);
+			if(!player.isParty()) {
+				player.printStatus();
+			}
+		}
 	}
 	
 	private Player recruitPlayer() {
