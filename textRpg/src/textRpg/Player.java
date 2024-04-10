@@ -13,7 +13,15 @@ public class Player extends Unit {
 	}
 	
 	public void skill(Player p, Monster target) {
-		
+		if(p.getKind() == Unit.WARRIOR) {
+			
+		}
+		else if(p.getKind() == Unit.WIZARD) {
+			
+		}
+		else if(p.getKind() == Unit.HEALER) {
+			
+		}
 	}
 	
 	public void guildMenu() {
