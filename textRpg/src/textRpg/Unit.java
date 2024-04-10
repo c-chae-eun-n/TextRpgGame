@@ -27,10 +27,28 @@ public class Unit {
 		this.maxExp = 143;	//
 		this.potion = 0;
 		this.money = 1000;
-		this.setParty(false);
-		this.setWeapon(null);
-		this.setArmor(null);
-		this.setRing(null);
+		this.party = false;
+		this.weapon = null;
+		this.armor = null;
+		this.ring = null;
+	}
+	
+	public Unit(String name, int kind, int level, int hp, int maxHp, int power, int def, int maxExp, int exp, int potion, int money, boolean party, Item weapon, Item armor, Item ring) {
+		this.name = name;
+		this.kind = kind;
+		this.level = level;
+		this.hp = hp;
+		this.maxHp = maxHp;
+		this.power = power;
+		this.def = def;
+		this.maxExp = maxExp;
+		this.exp = exp;
+		this.potion = potion;
+		this.money = money;
+		this.party = party;
+		this.weapon = weapon;
+		this.armor = armor;
+		this.ring = ring;
 	}
 
 	public String getName() {
