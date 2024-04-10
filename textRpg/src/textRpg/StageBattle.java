@@ -127,7 +127,7 @@ public class StageBattle extends Stage {
 		while(true) {
 			int idx = GameManager.random.nextInt(playerSize);
 			if(Player.guild.getGuildList(idx).isShield()) {
-				System.out.println(GameManager.yellow + "    ["+Player.guild.getGuildList(idx).getName()+"] ⚕️쉴드⚕️발동 공격 1회 방어!!\n" + GameManager.exit);
+				System.out.println(GameManager.yellow + " ["+Player.guild.getGuildList(idx).getName()+"] ⚕️쉴드⚕️발동 공격 1회 방어!!\n" + GameManager.exit);
 				Player.guild.getGuildList(idx).setShield(false);
 				break;
 			}
