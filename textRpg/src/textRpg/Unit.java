@@ -220,7 +220,7 @@ public class Unit {
 		}
 	}
 	
-	private void getRandomPotion() {
+	public void getRandomPotion() {
 		int rNum = GameManager.random.nextInt(4);
 		if(rNum != 0) {
 			setPotion(getPotion() + rNum);
